@@ -17,6 +17,12 @@
 		B184FA3D24EF56820030C510 /* RoundedEdgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184FA3C24EF56820030C510 /* RoundedEdgeView.swift */; };
 		B184FA4024EF57660030C510 /* UIExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184FA3F24EF57660030C510 /* UIExtentions.swift */; };
 		B184FA4224EF5BC20030C510 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184FA4124EF5BC20030C510 /* SignInViewController.swift */; };
+		B1AC7A7E24F03BC0002788CE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AC7A7D24F03BC0002788CE /* SignUpViewController.swift */; };
+		B1AC7A8224F03C53002788CE /* Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AC7A8124F03C53002788CE /* Validate.swift */; };
+		B1AC7A8424F03C65002788CE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AC7A8324F03C65002788CE /* Constants.swift */; };
+		B1AC7A8624F03F1A002788CE /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AC7A8524F03F1A002788CE /* Toast.swift */; };
+		B1AC7A8824F03FDD002788CE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1AC7A8724F03FDD002788CE /* Localizable.strings */; };
+		B1AC7A8A24F04048002788CE /* Pallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AC7A8924F04048002788CE /* Pallete.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +38,12 @@
 		B184FA3C24EF56820030C510 /* RoundedEdgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedEdgeView.swift; sourceTree = "<group>"; };
 		B184FA3F24EF57660030C510 /* UIExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtentions.swift; sourceTree = "<group>"; };
 		B184FA4124EF5BC20030C510 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		B1AC7A7D24F03BC0002788CE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		B1AC7A8124F03C53002788CE /* Validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validate.swift; sourceTree = "<group>"; };
+		B1AC7A8324F03C65002788CE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B1AC7A8524F03F1A002788CE /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		B1AC7A8724F03FDD002788CE /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		B1AC7A8924F04048002788CE /* Pallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pallete.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +76,8 @@
 		B184FA2424EF3FBA0030C510 /* PaymentWallTask */ = {
 			isa = PBXGroup;
 			children = (
+				B1AC7A8024F03C2C002788CE /* Utils */,
+				B1AC7A7F24F03BE7002788CE /* Storage */,
 				B184FA3E24EF56880030C510 /* Widgets */,
 				B184FA3924EF494C0030C510 /* Account */,
 				B184FA2524EF3FBA0030C510 /* AppDelegate.swift */,
@@ -73,6 +87,7 @@
 				B184FA2E24EF3FBB0030C510 /* Assets.xcassets */,
 				B184FA3024EF3FBB0030C510 /* LaunchScreen.storyboard */,
 				B184FA3324EF3FBB0030C510 /* Info.plist */,
+				B1AC7A8724F03FDD002788CE /* Localizable.strings */,
 			);
 			path = PaymentWallTask;
 			sourceTree = "<group>";
@@ -82,6 +97,7 @@
 			children = (
 				B184FA3A24EF495B0030C510 /* Account.storyboard */,
 				B184FA4124EF5BC20030C510 /* SignInViewController.swift */,
+				B1AC7A7D24F03BC0002788CE /* SignUpViewController.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -91,8 +107,26 @@
 			children = (
 				B184FA3C24EF56820030C510 /* RoundedEdgeView.swift */,
 				B184FA3F24EF57660030C510 /* UIExtentions.swift */,
+				B1AC7A8924F04048002788CE /* Pallete.swift */,
 			);
 			path = Widgets;
+			sourceTree = "<group>";
+		};
+		B1AC7A7F24F03BE7002788CE /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				B1AC7A8324F03C65002788CE /* Constants.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		B1AC7A8024F03C2C002788CE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B1AC7A8124F03C53002788CE /* Validate.swift */,
+				B1AC7A8524F03F1A002788CE /* Toast.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +189,7 @@
 			files = (
 				B184FA3224EF3FBB0030C510 /* LaunchScreen.storyboard in Resources */,
 				B184FA2F24EF3FBB0030C510 /* Assets.xcassets in Resources */,
+				B1AC7A8824F03FDD002788CE /* Localizable.strings in Resources */,
 				B184FA3B24EF495B0030C510 /* Account.storyboard in Resources */,
 				B184FA2D24EF3FBA0030C510 /* Main.storyboard in Resources */,
 			);
@@ -168,11 +203,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B184FA2A24EF3FBA0030C510 /* ViewController.swift in Sources */,
+				B1AC7A7E24F03BC0002788CE /* SignUpViewController.swift in Sources */,
 				B184FA3D24EF56820030C510 /* RoundedEdgeView.swift in Sources */,
+				B1AC7A8224F03C53002788CE /* Validate.swift in Sources */,
 				B184FA4224EF5BC20030C510 /* SignInViewController.swift in Sources */,
 				B184FA2624EF3FBA0030C510 /* AppDelegate.swift in Sources */,
 				B184FA4024EF57660030C510 /* UIExtentions.swift in Sources */,
+				B1AC7A8A24F04048002788CE /* Pallete.swift in Sources */,
+				B1AC7A8624F03F1A002788CE /* Toast.swift in Sources */,
 				B184FA2824EF3FBA0030C510 /* SceneDelegate.swift in Sources */,
+				B1AC7A8424F03C65002788CE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

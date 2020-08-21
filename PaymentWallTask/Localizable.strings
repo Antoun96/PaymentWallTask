@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  PaymentWallTask
+
+  Created by Antoun on 21/08/2020.
+  Copyright © 2020 PaymentWall. All rights reserved.
+*/
+
+"invalid_email" = "Please Enter Valid Email";
+
+"invalid_password" = "Please Enter Valid Password";
+
+"invalid_firstname" = "Please Enter Your First Name";
+
+"invalid_lastname" = "Please Enter Your Last Name";
+
+"accept_terms" = "Please Read and Accept our Terms and Conditions";

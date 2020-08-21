@@ -10,21 +10,51 @@ import UIKit
 
 class SignInViewController: UIViewController {
 
+    @IBOutlet weak var textFieldEmail: UITextField!
+    
+    @IBOutlet weak var textFieldPassword: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func validateLogin() -> Bool {
+        if !Validate.email(textFieldEmail.text ?? ""){
+            
+            Toast.showAlert(viewController: self, text: NSLocalizedString("invalid_email", comment: ""))
+            
+            return false
+        }else if textFieldPassword.text?.count ?? 0<8{
+            Toast.showAlert(viewController: self, text: NSLocalizedString("invalid_password", comment: ""))
+            
+            return false
+        }
+        
+        return true
     }
-    */
-
+    
+    @IBAction func actionFingerPrint(_ sender: Any) {
+    }
+    
+    @IBAction func actionForgetPassword(_ sender: Any) {
+    }
+    
+    @IBAction func actionLogin(_ sender: Any) {
+        
+        if validateLogin(){
+            
+        }
+        
+    }
+    
+    @IBAction func actionSignUp(_ sender: Any) {
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+        
+        vc.modalPresentationStyle = .overCurrentContext
+        
+        self.present(vc, animated: true, completion: nil)
+    }
 }
