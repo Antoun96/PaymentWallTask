@@ -14,6 +14,9 @@
 		B184FA2F24EF3FBB0030C510 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B184FA2E24EF3FBB0030C510 /* Assets.xcassets */; };
 		B184FA3224EF3FBB0030C510 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B184FA3024EF3FBB0030C510 /* LaunchScreen.storyboard */; };
 		B184FA3B24EF495B0030C510 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B184FA3A24EF495B0030C510 /* Account.storyboard */; };
+		B184FA3D24EF56820030C510 /* RoundedEdgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184FA3C24EF56820030C510 /* RoundedEdgeView.swift */; };
+		B184FA4024EF57660030C510 /* UIExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184FA3F24EF57660030C510 /* UIExtentions.swift */; };
+		B184FA4224EF5BC20030C510 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184FA4124EF5BC20030C510 /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		B184FA3124EF3FBB0030C510 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B184FA3324EF3FBB0030C510 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B184FA3A24EF495B0030C510 /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
+		B184FA3C24EF56820030C510 /* RoundedEdgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedEdgeView.swift; sourceTree = "<group>"; };
+		B184FA3F24EF57660030C510 /* UIExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtentions.swift; sourceTree = "<group>"; };
+		B184FA4124EF5BC20030C510 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 		B184FA2424EF3FBA0030C510 /* PaymentWallTask */ = {
 			isa = PBXGroup;
 			children = (
+				B184FA3E24EF56880030C510 /* Widgets */,
 				B184FA3924EF494C0030C510 /* Account */,
 				B184FA2524EF3FBA0030C510 /* AppDelegate.swift */,
 				B184FA2724EF3FBA0030C510 /* SceneDelegate.swift */,
@@ -74,8 +81,18 @@
 			isa = PBXGroup;
 			children = (
 				B184FA3A24EF495B0030C510 /* Account.storyboard */,
+				B184FA4124EF5BC20030C510 /* SignInViewController.swift */,
 			);
 			path = Account;
+			sourceTree = "<group>";
+		};
+		B184FA3E24EF56880030C510 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				B184FA3C24EF56820030C510 /* RoundedEdgeView.swift */,
+				B184FA3F24EF57660030C510 /* UIExtentions.swift */,
+			);
+			path = Widgets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,7 +168,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B184FA2A24EF3FBA0030C510 /* ViewController.swift in Sources */,
+				B184FA3D24EF56820030C510 /* RoundedEdgeView.swift in Sources */,
+				B184FA4224EF5BC20030C510 /* SignInViewController.swift in Sources */,
 				B184FA2624EF3FBA0030C510 /* AppDelegate.swift in Sources */,
+				B184FA4024EF57660030C510 /* UIExtentions.swift in Sources */,
 				B184FA2824EF3FBA0030C510 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,7 +325,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.task.PaymentWallTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -322,7 +342,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.task.PaymentWallTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

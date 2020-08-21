@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "bg_screen.png",
+      "filename" : "bg_screens.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "bg_screen@2x.png",
+      "filename" : "bg_screens@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "bg_screen@3x.png",
+      "filename" : "bg_screens@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
