@@ -10,9 +10,20 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    @IBOutlet weak var container: UIView!
+    
+    private var childViewController: UIViewController!
+    
+    @IBOutlet var tabButton: [UIButton]!
+    
+    @IBOutlet var tabLabels: [UILabel]!
+    
+    var selectedBarButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        actionTab(tabButton[0])
         
     }
     
@@ -28,6 +39,88 @@ class MainViewController: UIViewController {
         
     }
 
+    @IBAction func actionTab(_ sender: UIButton) {
+        
+        if sender.tag != selectedBarButton?.tag {
+            
+            switch selectedBarButton?.tag ?? -1 {
+            case 0:
+                
+                tabLabels[0].textColor = .black
+                tabButton[0].setImage(UIImage(named: "ic_wallet"), for: .normal)
+                break
+            case 1:
+                tabLabels[1].textColor = .black
+                tabButton[1].setImage(UIImage(named: "ic_qrcode"), for: .normal)
+                break
+            case 2:
+                tabLabels[2].textColor = .black
+                tabButton[2].setImage(UIImage(named: "ic_profile"), for: .normal)
+                break
+            default:
+                break
+            }
+            
+            switch sender.tag {
+            case 0:
+                
+                tabLabels[0].textColor = .orange
+                tabButton[0].setImage(UIImage(named: "ic_wallet_selected"), for: .normal)
+                wallet()
+                break
+            case 1:
+                
+                tabLabels[1].textColor = .orange
+                tabButton[1].setImage(UIImage(named: "ic_qrcode_selected"), for: .normal)
+                
+                break
+            case 2:
+                tabLabels[2].textColor = .orange
+                tabButton[2].setImage(UIImage(named: "ic_profile_selected"), for: .normal)
+                profile()
+                break
+            default:
+                break
+            }
+            
+            selectedBarButton = sender
+        }
+        
+    }
+    
+    func wallet() {
+        
+        let vc = storyboard!.instantiateViewController(withIdentifier: "WalletViewController") as! WalletViewController
+        
+        replaceChild(viewController: vc)
+    }
+    
+    func profile() {
+        
+        let vc = storyboard!.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        
+        replaceChild(viewController: vc)
+    }
+    
+    func replaceChild(viewController: UIViewController) {
+        
+        if let view = self.container.subviews.last {
+            
+            view.removeFromSuperview()
+        }
+        
+        if let viewController = self.children.last {
+            
+            viewController.removeFromParent()
+        }
+        
+        self.addChild(viewController)
+        
+        self.container.addSubview(viewController.view)
+        self.container.bringSubviewToFront(viewController.view)
+        viewController.view.frame = CGRect(x: 0, y: 0, width: self.container.frame.width, height: self.container.frame.height)
 
+        childViewController = viewController
+    }
 }
 
