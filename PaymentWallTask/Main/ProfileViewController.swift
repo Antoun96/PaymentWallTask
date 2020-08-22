@@ -10,10 +10,16 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var labelUsername: UILabel!
+    
+    var manager: SettingsManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        manager = SettingsManager()
+        
+        labelUsername.text = "\(manager.getFirstName()) \(manager.getLastName())"
     }
     
 

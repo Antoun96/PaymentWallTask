@@ -32,6 +32,7 @@ class SettingsManager {
         if let user = user {
 
             if user.id > 0{
+                setIsloggedIn(value: true)
                 setId(value: user.id)
                 setFirstName(value: user.firstName)
                 setLastName(value: user.lastName)
@@ -100,8 +101,8 @@ class SettingsManager {
         let _ =  save(object: value, setting: Settings.Balance)
     }
     
-    func getBalance() -> String {
-        return userDefault.object(forKey: Settings.Balance.rawValue) as! String
+    func getBalance() -> Double {
+        return userDefault.object(forKey: Settings.Balance.rawValue) as! Double
     }
     
     private func save(object: Any, setting: Settings) -> Bool {

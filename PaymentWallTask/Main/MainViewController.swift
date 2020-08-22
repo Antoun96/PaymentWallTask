@@ -23,7 +23,17 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        actionTab(tabButton[0])
+        if !SettingsManager().isLoggedIn(){
+            
+            let vc = UIStoryboard(name: "Account", bundle: nil).instantiateInitialViewController()
+            
+            let window = UIApplication.shared.keyWindow!
+            
+            window.rootViewController = vc
+            window.makeKeyAndVisible()
+        }else{
+            actionTab(tabButton[0])
+        }
         
     }
     

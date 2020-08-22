@@ -10,10 +10,12 @@ import UIKit
 
 class WalletViewController: UIViewController {
 
+    @IBOutlet weak var labelBalance: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        labelBalance.text = "$\(String(format: "%.2f", SettingsManager().getBalance()))"
     }
     
 

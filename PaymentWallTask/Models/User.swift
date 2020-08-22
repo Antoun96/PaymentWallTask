@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 class User{
     
@@ -20,4 +21,26 @@ class User{
     init() {
         
     }
+    
+    init(email: String, firstName: String, lastName: String, password: String, balance: Double) {
+        
+        self.email = email
+        self.firstName = firstName
+        self.lastName = lastName
+        self.password = password
+        self.balance = balance
+        
+    }
+    
+    func setValues(data: NSManagedObject){
+        
+        self.id = data.value(forKey: "id") as? Int
+        self.email = data.value(forKey: "email") as? String
+        self.firstName = data.value(forKey: "firstName") as? String
+        self.lastName = data.value(forKey: "lastName") as? String
+        self.password = data.value(forKey: "password") as? String
+        self.balance = data.value(forKey: "balance") as? Double
+        
+    }
+    
 }

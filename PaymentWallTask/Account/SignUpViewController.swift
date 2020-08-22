@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class SignUpViewController: UIViewController {
 
@@ -26,6 +27,8 @@ class SignUpViewController: UIViewController {
    
     var loadingView: LoadingView!
     
+    var coreDataHelper: CoreDataHelper!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,6 +40,8 @@ class SignUpViewController: UIViewController {
         
         labelTerms.isUserInteractionEnabled = true
         labelTerms.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapOnLabel(_:))))
+        
+        coreDataHelper = CoreDataHelper.getInstance()
         
     }
     
@@ -78,11 +83,12 @@ class SignUpViewController: UIViewController {
         }else if !switchTerms.isOn{
             
             Toast.showAlert(viewController: self, text: NSLocalizedString("accept_terms", comment: ""))
+            return false
         }
         
         user = User()
         user.email = textFieldEmail.text
-        user.firstName = textFieldEmail.text
+        user.firstName = textFieldFirstName.text
         user.lastName = textFieldLastName.text
         user.password = textFieldPassword.text
         user.balance = 600.00
@@ -96,15 +102,13 @@ class SignUpViewController: UIViewController {
         
         if validateSignUp(){
             
-            let db = DataBaseHelper.getInstance()
-            db.insert(user: user) { (id) in
-                if id > -1{
+            coreDataHelper.register(user: user) { (usr) in
+                
+                if usr != nil{
                     
-                    user.id = id
+                    SettingsManager().updateUser(user: usr)
                     
-                    SettingsManager().updateUser(user: user)
-                    
-                    loadingView.setIsLoading(false)
+                    self.loadingView.setIsLoading(false)
                     
                     let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
                     
@@ -114,11 +118,13 @@ class SignUpViewController: UIViewController {
                     window.makeKeyAndVisible()
                 }else {
                     
-                    loadingView.setIsLoading(false)
+                    self.loadingView.setIsLoading(false)
                     Toast.showAlert(viewController: self, text: "registration_error")
                 }
+                
             }
         }
+        
         loadingView.setIsLoading(false)
     }
     

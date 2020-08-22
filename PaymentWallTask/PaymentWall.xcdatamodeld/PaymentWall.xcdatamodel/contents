@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Transactions" representedClassName=".Transactions" syncable="YES">
+        <attribute name="date" attributeType="Date" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="Decimal" defaultValueString="0"/>
+        <attribute name="price" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="productDescription" attributeType="String"/>
+        <attribute name="productImage" attributeType="String"/>
+        <attribute name="productName" attributeType="String"/>
+        <relationship name="origin" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="USERS" inverseName="relationship_id" inverseEntity="USERS"/>
+    </entity>
+    <entity name="USERS" representedClassName=".USERS" syncable="YES">
+        <attribute name="balance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="id" attributeType="Decimal" defaultValueString="0"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="password" optional="YES" attributeType="String"/>
+        <relationship name="relationship_id" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transactions" inverseName="origin" inverseEntity="Transactions"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <elements>
+        <element name="USERS" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="Transactions" positionX="248.73828125" positionY="37.21484375" width="128" height="148"/>
+    </elements>
+</model>

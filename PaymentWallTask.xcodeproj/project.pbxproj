@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B102F51024F0A6BF009C7806 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B102F50F24F0A6BF009C7806 /* DatabaseHelper.swift */; };
 		B102F51324F0BEE6009C7806 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B102F51224F0BEE6009C7806 /* User.swift */; };
 		B184FA2624EF3FBA0030C510 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184FA2524EF3FBA0030C510 /* AppDelegate.swift */; };
 		B184FA2824EF3FBA0030C510 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184FA2724EF3FBA0030C510 /* SceneDelegate.swift */; };
@@ -21,6 +20,12 @@
 		B184FA4224EF5BC20030C510 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184FA4124EF5BC20030C510 /* SignInViewController.swift */; };
 		B1A9CE7B24F17CF500B61776 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE7A24F17CF500B61776 /* SettingsManager.swift */; };
 		B1A9CE7D24F1825500B61776 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE7C24F1825500B61776 /* LoadingView.swift */; };
+		B1A9CE8024F18FAC00B61776 /* PaymentWall.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE7E24F18FAC00B61776 /* PaymentWall.xcdatamodeld */; };
+		B1A9CE8E24F198B900B61776 /* Transactions+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE8A24F198B900B61776 /* Transactions+CoreDataProperties.swift */; };
+		B1A9CE8F24F198B900B61776 /* Transactions+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE8B24F198B900B61776 /* Transactions+CoreDataClass.swift */; };
+		B1A9CE9024F198B900B61776 /* USERS+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE8C24F198B900B61776 /* USERS+CoreDataProperties.swift */; };
+		B1A9CE9124F198B900B61776 /* USERS+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE8D24F198B900B61776 /* USERS+CoreDataClass.swift */; };
+		B1A9CE9324F19E0E00B61776 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE9224F19E0E00B61776 /* CoreDataHelper.swift */; };
 		B1AC7A7E24F03BC0002788CE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AC7A7D24F03BC0002788CE /* SignUpViewController.swift */; };
 		B1AC7A8224F03C53002788CE /* Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AC7A8124F03C53002788CE /* Validate.swift */; };
 		B1AC7A8624F03F1A002788CE /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AC7A8524F03F1A002788CE /* Toast.swift */; };
@@ -36,7 +41,6 @@
 		09BB050F67F4292152B80936 /* Pods-PaymentWallTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaymentWallTask.debug.xcconfig"; path = "Target Support Files/Pods-PaymentWallTask/Pods-PaymentWallTask.debug.xcconfig"; sourceTree = "<group>"; };
 		55AB58265DB91DA8551FA5D1 /* Pods-PaymentWallTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaymentWallTask.release.xcconfig"; path = "Target Support Files/Pods-PaymentWallTask/Pods-PaymentWallTask.release.xcconfig"; sourceTree = "<group>"; };
 		61BD3B7D906AA8D7B70D47D1 /* Pods_PaymentWallTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PaymentWallTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B102F50F24F0A6BF009C7806 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		B102F51224F0BEE6009C7806 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B184FA2224EF3FBA0030C510 /* PaymentWallTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaymentWallTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B184FA2524EF3FBA0030C510 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +56,12 @@
 		B184FA4124EF5BC20030C510 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		B1A9CE7A24F17CF500B61776 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		B1A9CE7C24F1825500B61776 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		B1A9CE7F24F18FAC00B61776 /* PaymentWall.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PaymentWall.xcdatamodel; sourceTree = "<group>"; };
+		B1A9CE8A24F198B900B61776 /* Transactions+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Transactions+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B1A9CE8B24F198B900B61776 /* Transactions+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Transactions+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B1A9CE8C24F198B900B61776 /* USERS+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "USERS+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B1A9CE8D24F198B900B61776 /* USERS+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "USERS+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B1A9CE9224F19E0E00B61776 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		B1AC7A7D24F03BC0002788CE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B1AC7A8124F03C53002788CE /* Validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validate.swift; sourceTree = "<group>"; };
 		B1AC7A8524F03F1A002788CE /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
@@ -123,6 +133,7 @@
 				B184FA3024EF3FBB0030C510 /* LaunchScreen.storyboard */,
 				B184FA3324EF3FBB0030C510 /* Info.plist */,
 				B1AC7A8724F03FDD002788CE /* Localizable.strings */,
+				B1A9CE7E24F18FAC00B61776 /* PaymentWall.xcdatamodeld */,
 			);
 			path = PaymentWallTask;
 			sourceTree = "<group>";
@@ -149,11 +160,23 @@
 			path = Widgets;
 			sourceTree = "<group>";
 		};
+		B1A9CE8124F197A800B61776 /* CoreDataModels */ = {
+			isa = PBXGroup;
+			children = (
+				B1A9CE8B24F198B900B61776 /* Transactions+CoreDataClass.swift */,
+				B1A9CE8A24F198B900B61776 /* Transactions+CoreDataProperties.swift */,
+				B1A9CE8D24F198B900B61776 /* USERS+CoreDataClass.swift */,
+				B1A9CE8C24F198B900B61776 /* USERS+CoreDataProperties.swift */,
+			);
+			path = CoreDataModels;
+			sourceTree = "<group>";
+		};
 		B1AC7A7F24F03BE7002788CE /* Storage */ = {
 			isa = PBXGroup;
 			children = (
-				B102F50F24F0A6BF009C7806 /* DatabaseHelper.swift */,
+				B1A9CE8124F197A800B61776 /* CoreDataModels */,
 				B1A9CE7A24F17CF500B61776 /* SettingsManager.swift */,
+				B1A9CE9224F19E0E00B61776 /* CoreDataHelper.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -305,12 +328,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B184FA2A24EF3FBA0030C510 /* MainViewController.swift in Sources */,
-				B102F51024F0A6BF009C7806 /* DatabaseHelper.swift in Sources */,
+				B1A9CE9324F19E0E00B61776 /* CoreDataHelper.swift in Sources */,
+				B1A9CE9124F198B900B61776 /* USERS+CoreDataClass.swift in Sources */,
+				B1A9CE9024F198B900B61776 /* USERS+CoreDataProperties.swift in Sources */,
 				B1AC7A7E24F03BC0002788CE /* SignUpViewController.swift in Sources */,
 				B184FA3D24EF56820030C510 /* RoundedEdgeView.swift in Sources */,
 				B1A9CE7D24F1825500B61776 /* LoadingView.swift in Sources */,
 				B102F51324F0BEE6009C7806 /* User.swift in Sources */,
+				B1A9CE8024F18FAC00B61776 /* PaymentWall.xcdatamodeld in Sources */,
 				B1AC7A8224F03C53002788CE /* Validate.swift in Sources */,
+				B1A9CE8E24F198B900B61776 /* Transactions+CoreDataProperties.swift in Sources */,
 				B1B5D4AC24F093720057C153 /* ProfileViewController.swift in Sources */,
 				B184FA4224EF5BC20030C510 /* SignInViewController.swift in Sources */,
 				B1B5D4A824F087690057C153 /* WalletViewController.swift in Sources */,
@@ -318,6 +345,7 @@
 				B184FA4024EF57660030C510 /* UIExtentions.swift in Sources */,
 				B1AC7A8A24F04048002788CE /* Pallete.swift in Sources */,
 				B1A9CE7B24F17CF500B61776 /* SettingsManager.swift in Sources */,
+				B1A9CE8F24F198B900B61776 /* Transactions+CoreDataClass.swift in Sources */,
 				B1AC7A8624F03F1A002788CE /* Toast.swift in Sources */,
 				B184FA2824EF3FBA0030C510 /* SceneDelegate.swift in Sources */,
 				B1B5D4AA24F08F840057C153 /* CircularImageView.swift in Sources */,
@@ -518,6 +546,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B1A9CE7E24F18FAC00B61776 /* PaymentWall.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B1A9CE7F24F18FAC00B61776 /* PaymentWall.xcdatamodel */,
+			);
+			currentVersion = B1A9CE7F24F18FAC00B61776 /* PaymentWall.xcdatamodel */;
+			path = PaymentWall.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B184FA1A24EF3FBA0030C510 /* Project object */;
 }

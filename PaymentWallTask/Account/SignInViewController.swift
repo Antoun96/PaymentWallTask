@@ -16,6 +16,8 @@ class SignInViewController: UIViewController {
     
     var loadingView: LoadingView!
     
+    var coreDataHelper: CoreDataHelper!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +27,7 @@ class SignInViewController: UIViewController {
         loadingView.setIsLoading(false)
         self.view.addSubview(loadingView)
         
+        coreDataHelper = CoreDataHelper.getInstance()
     }
     
     func validateLogin() -> Bool {
@@ -54,8 +57,7 @@ class SignInViewController: UIViewController {
         
         if validateLogin(){
             
-            let db = DataBaseHelper.getInstance()
-            db.signIn(email: textFieldEmail.text!, password: textFieldPassword.text!) { (usr) in
+            coreDataHelper.signIn(email: textFieldEmail.text!, password: textFieldPassword.text!) { (usr) in
                 
                 if usr != nil{
                     
@@ -74,6 +76,27 @@ class SignInViewController: UIViewController {
                     Toast.showAlert(viewController: self, text: "wrong_credintials")
                 }
             }
+            
+//            let db = DataBaseHelper.getInstance()
+//            db.signIn(email: textFieldEmail.text!, password: textFieldPassword.text!) { (usr) in
+//                
+//                if usr != nil{
+//                    
+//                    SettingsManager().updateUser(user: usr)
+//                    
+//                    loadingView.setIsLoading(false)
+//                    
+//                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+//                    
+//                    let window = UIApplication.shared.keyWindow!
+//                    
+//                    window.rootViewController = vc
+//                    window.makeKeyAndVisible()
+//                }else {
+//                    loadingView.setIsLoading(false)
+//                    Toast.showAlert(viewController: self, text: "wrong_credintials")
+//                }
+//            }
         }
         
         loadingView.setIsLoading(false)
