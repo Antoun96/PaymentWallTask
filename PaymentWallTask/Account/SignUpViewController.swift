@@ -21,6 +21,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var switchTerms: UISwitch!
     
     @IBOutlet weak var labelTerms: UILabel!
+    
+    var user: User!
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,12 +72,34 @@ class SignUpViewController: UIViewController {
             Toast.showAlert(viewController: self, text: NSLocalizedString("accept_terms", comment: ""))
         }
         
+        user = User()
+        user.email = textFieldEmail.text
+        user.firstName = textFieldEmail.text
+        user.lastName = textFieldLastName.text
+        user.password = textFieldPassword.text
+        user.balance = 600.00
+        
         return true
     }
 
     @IBAction func actionSignUp(_ sender: Any) {
         
         if validateSignUp(){
+            
+            var db = DataBaseHelper.getInstance()
+            db.insert(user: user) { (success) in
+                if success{
+                    
+                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+                    
+                    let window = UIApplication.shared.keyWindow!
+                    
+                    window.rootViewController = vc
+                    window.makeKeyAndVisible()
+                }else {
+                    Toast.showAlert(viewController: self, text: "registration_error")
+                }
+            }
             
         }
         

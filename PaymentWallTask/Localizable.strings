@@ -15,3 +15,7 @@
 "invalid_lastname" = "Please Enter Your Last Name";
 
 "accept_terms" = "Please Read and Accept our Terms and Conditions";
+
+"registration_error" = "Error Occured While Registeration";
+
+"wrong_credintials" = "Wrong Credintials";

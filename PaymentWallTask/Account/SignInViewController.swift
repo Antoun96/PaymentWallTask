@@ -45,6 +45,21 @@ class SignInViewController: UIViewController {
         
         if validateLogin(){
             
+            var db = DataBaseHelper.getInstance()
+            db.signIn(email: textFieldEmail.text!, password: textFieldPassword.text!) { (usr) in
+                
+                if usr != nil{
+                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+                    
+                    let window = UIApplication.shared.keyWindow!
+                    
+                    window.rootViewController = vc
+                    window.makeKeyAndVisible()
+                }else {
+                    Toast.showAlert(viewController: self, text: "wrong_credintials")
+                }
+            }
+            
         }
         
     }

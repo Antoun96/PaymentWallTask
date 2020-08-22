@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B102F51024F0A6BF009C7806 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B102F50F24F0A6BF009C7806 /* DatabaseHelper.swift */; };
+		B102F51324F0BEE6009C7806 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B102F51224F0BEE6009C7806 /* User.swift */; };
 		B184FA2624EF3FBA0030C510 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184FA2524EF3FBA0030C510 /* AppDelegate.swift */; };
 		B184FA2824EF3FBA0030C510 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184FA2724EF3FBA0030C510 /* SceneDelegate.swift */; };
-		B184FA2A24EF3FBA0030C510 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184FA2924EF3FBA0030C510 /* ViewController.swift */; };
+		B184FA2A24EF3FBA0030C510 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184FA2924EF3FBA0030C510 /* MainViewController.swift */; };
 		B184FA2D24EF3FBA0030C510 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B184FA2B24EF3FBA0030C510 /* Main.storyboard */; };
 		B184FA2F24EF3FBB0030C510 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B184FA2E24EF3FBB0030C510 /* Assets.xcassets */; };
 		B184FA3224EF3FBB0030C510 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B184FA3024EF3FBB0030C510 /* LaunchScreen.storyboard */; };
@@ -23,6 +25,9 @@
 		B1AC7A8624F03F1A002788CE /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AC7A8524F03F1A002788CE /* Toast.swift */; };
 		B1AC7A8824F03FDD002788CE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1AC7A8724F03FDD002788CE /* Localizable.strings */; };
 		B1AC7A8A24F04048002788CE /* Pallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AC7A8924F04048002788CE /* Pallete.swift */; };
+		B1B5D4A824F087690057C153 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B5D4A724F087690057C153 /* WalletViewController.swift */; };
+		B1B5D4AA24F08F840057C153 /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B5D4A924F08F840057C153 /* CircularImageView.swift */; };
+		B1B5D4AC24F093720057C153 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B5D4AB24F093720057C153 /* ProfileViewController.swift */; };
 		EA42DDAB602A530B66D0BF81 /* Pods_PaymentWallTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61BD3B7D906AA8D7B70D47D1 /* Pods_PaymentWallTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,10 +35,12 @@
 		09BB050F67F4292152B80936 /* Pods-PaymentWallTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaymentWallTask.debug.xcconfig"; path = "Target Support Files/Pods-PaymentWallTask/Pods-PaymentWallTask.debug.xcconfig"; sourceTree = "<group>"; };
 		55AB58265DB91DA8551FA5D1 /* Pods-PaymentWallTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaymentWallTask.release.xcconfig"; path = "Target Support Files/Pods-PaymentWallTask/Pods-PaymentWallTask.release.xcconfig"; sourceTree = "<group>"; };
 		61BD3B7D906AA8D7B70D47D1 /* Pods_PaymentWallTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PaymentWallTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B102F50F24F0A6BF009C7806 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
+		B102F51224F0BEE6009C7806 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B184FA2224EF3FBA0030C510 /* PaymentWallTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaymentWallTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B184FA2524EF3FBA0030C510 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B184FA2724EF3FBA0030C510 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B184FA2924EF3FBA0030C510 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B184FA2924EF3FBA0030C510 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B184FA2C24EF3FBA0030C510 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B184FA2E24EF3FBB0030C510 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B184FA3124EF3FBB0030C510 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,6 +55,9 @@
 		B1AC7A8524F03F1A002788CE /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		B1AC7A8724F03FDD002788CE /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		B1AC7A8924F04048002788CE /* Pallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pallete.swift; sourceTree = "<group>"; };
+		B1B5D4A724F087690057C153 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		B1B5D4A924F08F840057C153 /* CircularImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
+		B1B5D4AB24F093720057C153 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +78,14 @@
 				61BD3B7D906AA8D7B70D47D1 /* Pods_PaymentWallTask.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B102F51124F0BED6009C7806 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B102F51224F0BEE6009C7806 /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		B184FA1924EF3FBA0030C510 = {
@@ -91,6 +109,7 @@
 		B184FA2424EF3FBA0030C510 /* PaymentWallTask */ = {
 			isa = PBXGroup;
 			children = (
+				B102F51124F0BED6009C7806 /* Models */,
 				B1AC7A8024F03C2C002788CE /* Utils */,
 				B1AC7A7F24F03BE7002788CE /* Storage */,
 				B184FA3E24EF56880030C510 /* Widgets */,
@@ -98,7 +117,6 @@
 				B1AC7A8B24F05096002788CE /* Main */,
 				B184FA2524EF3FBA0030C510 /* AppDelegate.swift */,
 				B184FA2724EF3FBA0030C510 /* SceneDelegate.swift */,
-				B184FA2924EF3FBA0030C510 /* ViewController.swift */,
 				B184FA2E24EF3FBB0030C510 /* Assets.xcassets */,
 				B184FA3024EF3FBB0030C510 /* LaunchScreen.storyboard */,
 				B184FA3324EF3FBB0030C510 /* Info.plist */,
@@ -123,6 +141,7 @@
 				B184FA3C24EF56820030C510 /* RoundedEdgeView.swift */,
 				B184FA3F24EF57660030C510 /* UIExtentions.swift */,
 				B1AC7A8924F04048002788CE /* Pallete.swift */,
+				B1B5D4A924F08F840057C153 /* CircularImageView.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -131,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				B1AC7A8324F03C65002788CE /* Constants.swift */,
+				B102F50F24F0A6BF009C7806 /* DatabaseHelper.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -148,6 +168,9 @@
 			isa = PBXGroup;
 			children = (
 				B184FA2B24EF3FBA0030C510 /* Main.storyboard */,
+				B184FA2924EF3FBA0030C510 /* MainViewController.swift */,
+				B1B5D4A724F087690057C153 /* WalletViewController.swift */,
+				B1B5D4AB24F093720057C153 /* ProfileViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -158,7 +181,6 @@
 				09BB050F67F4292152B80936 /* Pods-PaymentWallTask.debug.xcconfig */,
 				55AB58265DB91DA8551FA5D1 /* Pods-PaymentWallTask.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -279,16 +301,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B184FA2A24EF3FBA0030C510 /* ViewController.swift in Sources */,
+				B184FA2A24EF3FBA0030C510 /* MainViewController.swift in Sources */,
+				B102F51024F0A6BF009C7806 /* DatabaseHelper.swift in Sources */,
 				B1AC7A7E24F03BC0002788CE /* SignUpViewController.swift in Sources */,
 				B184FA3D24EF56820030C510 /* RoundedEdgeView.swift in Sources */,
+				B102F51324F0BEE6009C7806 /* User.swift in Sources */,
 				B1AC7A8224F03C53002788CE /* Validate.swift in Sources */,
+				B1B5D4AC24F093720057C153 /* ProfileViewController.swift in Sources */,
 				B184FA4224EF5BC20030C510 /* SignInViewController.swift in Sources */,
+				B1B5D4A824F087690057C153 /* WalletViewController.swift in Sources */,
 				B184FA2624EF3FBA0030C510 /* AppDelegate.swift in Sources */,
 				B184FA4024EF57660030C510 /* UIExtentions.swift in Sources */,
 				B1AC7A8A24F04048002788CE /* Pallete.swift in Sources */,
 				B1AC7A8624F03F1A002788CE /* Toast.swift in Sources */,
 				B184FA2824EF3FBA0030C510 /* SceneDelegate.swift in Sources */,
+				B1B5D4AA24F08F840057C153 /* CircularImageView.swift in Sources */,
 				B1AC7A8424F03C65002788CE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
