@@ -120,7 +120,7 @@ class DataBaseHelper{
         
     }
     
-    func insert (user: User, action: ((_: Bool)-> Void)){
+    func insert (user: User, action: ((_: Int)-> Void)){
      
         let insertStatementString = "INSERT INTO USERS (FirstName, LastName, Password, Email, Balance) VALUES (?, ?, ?, ?, ?);"
         
@@ -137,15 +137,18 @@ class DataBaseHelper{
             
           if sqlite3_step(insertStatement) == SQLITE_DONE {
             
-            action(true)
+            let lastRowId = sqlite3_last_insert_rowid(db);
+            print(lastRowId)
+            
+            action(Int(lastRowId))
             print("\nSuccessfully inserted row.")
             
           } else {
-            action(false)
+            action(-1)
             print("\nCould not insert row.")
           }
         } else {
-            action(false)
+            action(-1)
           print("\nINSERT statement is not prepared.")
         }
         // 5

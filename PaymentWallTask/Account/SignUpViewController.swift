@@ -24,8 +24,16 @@ class SignUpViewController: UIViewController {
     
     var user: User!
    
+    var loadingView: LoadingView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadingView = LoadingView(frame: self.view.frame)
+        loadingView.setLoadingImage(image: UIImage(named: "ic_loading")!)
+        loadingView.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+        loadingView.setIsLoading(false)
+        self.view.addSubview(loadingView)
         
         labelTerms.isUserInteractionEnabled = true
         labelTerms.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapOnLabel(_:))))
@@ -84,11 +92,19 @@ class SignUpViewController: UIViewController {
 
     @IBAction func actionSignUp(_ sender: Any) {
         
+        loadingView.setIsLoading(true)
+        
         if validateSignUp(){
             
-            var db = DataBaseHelper.getInstance()
-            db.insert(user: user) { (success) in
-                if success{
+            let db = DataBaseHelper.getInstance()
+            db.insert(user: user) { (id) in
+                if id > -1{
+                    
+                    user.id = id
+                    
+                    SettingsManager().updateUser(user: user)
+                    
+                    loadingView.setIsLoading(false)
                     
                     let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
                     
@@ -97,12 +113,13 @@ class SignUpViewController: UIViewController {
                     window.rootViewController = vc
                     window.makeKeyAndVisible()
                 }else {
+                    
+                    loadingView.setIsLoading(false)
                     Toast.showAlert(viewController: self, text: "registration_error")
                 }
             }
-            
         }
-        
+        loadingView.setIsLoading(false)
     }
     
     @IBAction func actionSignIn(_ sender: Any) {

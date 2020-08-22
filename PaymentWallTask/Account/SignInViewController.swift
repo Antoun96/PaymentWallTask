@@ -14,10 +14,17 @@ class SignInViewController: UIViewController {
     
     @IBOutlet weak var textFieldPassword: UITextField!
     
+    var loadingView: LoadingView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        loadingView = LoadingView(frame: self.view.frame)
+        loadingView.setLoadingImage(image: UIImage(named: "ic_loading")!)
+        loadingView.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+        loadingView.setIsLoading(false)
+        self.view.addSubview(loadingView)
+        
     }
     
     func validateLogin() -> Bool {
@@ -43,12 +50,19 @@ class SignInViewController: UIViewController {
     
     @IBAction func actionLogin(_ sender: Any) {
         
+        loadingView.setIsLoading(true)
+        
         if validateLogin(){
             
-            var db = DataBaseHelper.getInstance()
+            let db = DataBaseHelper.getInstance()
             db.signIn(email: textFieldEmail.text!, password: textFieldPassword.text!) { (usr) in
                 
                 if usr != nil{
+                    
+                    SettingsManager().updateUser(user: usr)
+                    
+                    loadingView.setIsLoading(false)
+                    
                     let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
                     
                     let window = UIApplication.shared.keyWindow!
@@ -56,12 +70,13 @@ class SignInViewController: UIViewController {
                     window.rootViewController = vc
                     window.makeKeyAndVisible()
                 }else {
+                    loadingView.setIsLoading(false)
                     Toast.showAlert(viewController: self, text: "wrong_credintials")
                 }
             }
-            
         }
         
+        loadingView.setIsLoading(false)
     }
     
     @IBAction func actionSignUp(_ sender: Any) {
