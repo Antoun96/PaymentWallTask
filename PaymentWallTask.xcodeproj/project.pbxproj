@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B102F51324F0BEE6009C7806 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B102F51224F0BEE6009C7806 /* User.swift */; };
 		B184FA2624EF3FBA0030C510 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184FA2524EF3FBA0030C510 /* AppDelegate.swift */; };
-		B184FA2824EF3FBA0030C510 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184FA2724EF3FBA0030C510 /* SceneDelegate.swift */; };
 		B184FA2A24EF3FBA0030C510 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184FA2924EF3FBA0030C510 /* MainViewController.swift */; };
 		B184FA2D24EF3FBA0030C510 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B184FA2B24EF3FBA0030C510 /* Main.storyboard */; };
 		B184FA2F24EF3FBB0030C510 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B184FA2E24EF3FBB0030C510 /* Assets.xcassets */; };
@@ -26,6 +25,9 @@
 		B1A9CE9024F198B900B61776 /* USERS+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE8C24F198B900B61776 /* USERS+CoreDataProperties.swift */; };
 		B1A9CE9124F198B900B61776 /* USERS+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE8D24F198B900B61776 /* USERS+CoreDataClass.swift */; };
 		B1A9CE9324F19E0E00B61776 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE9224F19E0E00B61776 /* CoreDataHelper.swift */; };
+		B1A9CE9524F1D77600B61776 /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE9424F1D77600B61776 /* QRScannerView.swift */; };
+		B1A9CE9724F1D79B00B61776 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE9624F1D79B00B61776 /* QRScannerViewController.swift */; };
+		B1A9CE9924F1E8CF00B61776 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE9824F1E8CE00B61776 /* SceneDelegate.swift */; };
 		B1AC7A7E24F03BC0002788CE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AC7A7D24F03BC0002788CE /* SignUpViewController.swift */; };
 		B1AC7A8224F03C53002788CE /* Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AC7A8124F03C53002788CE /* Validate.swift */; };
 		B1AC7A8624F03F1A002788CE /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AC7A8524F03F1A002788CE /* Toast.swift */; };
@@ -44,7 +46,6 @@
 		B102F51224F0BEE6009C7806 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B184FA2224EF3FBA0030C510 /* PaymentWallTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaymentWallTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B184FA2524EF3FBA0030C510 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B184FA2724EF3FBA0030C510 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B184FA2924EF3FBA0030C510 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B184FA2C24EF3FBA0030C510 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B184FA2E24EF3FBB0030C510 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,6 +63,9 @@
 		B1A9CE8C24F198B900B61776 /* USERS+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "USERS+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B1A9CE8D24F198B900B61776 /* USERS+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "USERS+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B1A9CE9224F19E0E00B61776 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		B1A9CE9424F1D77600B61776 /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
+		B1A9CE9624F1D79B00B61776 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
+		B1A9CE9824F1E8CE00B61776 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B1AC7A7D24F03BC0002788CE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B1AC7A8124F03C53002788CE /* Validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validate.swift; sourceTree = "<group>"; };
 		B1AC7A8524F03F1A002788CE /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
@@ -128,7 +132,7 @@
 				B184FA3924EF494C0030C510 /* Account */,
 				B1AC7A8B24F05096002788CE /* Main */,
 				B184FA2524EF3FBA0030C510 /* AppDelegate.swift */,
-				B184FA2724EF3FBA0030C510 /* SceneDelegate.swift */,
+				B1A9CE9824F1E8CE00B61776 /* SceneDelegate.swift */,
 				B184FA2E24EF3FBB0030C510 /* Assets.xcassets */,
 				B184FA3024EF3FBB0030C510 /* LaunchScreen.storyboard */,
 				B184FA3324EF3FBB0030C510 /* Info.plist */,
@@ -156,6 +160,7 @@
 				B1AC7A8924F04048002788CE /* Pallete.swift */,
 				B1B5D4A924F08F840057C153 /* CircularImageView.swift */,
 				B1A9CE7C24F1825500B61776 /* LoadingView.swift */,
+				B1A9CE9424F1D77600B61776 /* QRScannerView.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 				B184FA2B24EF3FBA0030C510 /* Main.storyboard */,
 				B184FA2924EF3FBA0030C510 /* MainViewController.swift */,
 				B1B5D4A724F087690057C153 /* WalletViewController.swift */,
+				B1A9CE9624F1D79B00B61776 /* QRScannerViewController.swift */,
 				B1B5D4AB24F093720057C153 /* ProfileViewController.swift */,
 			);
 			path = Main;
@@ -333,6 +339,7 @@
 				B1A9CE9024F198B900B61776 /* USERS+CoreDataProperties.swift in Sources */,
 				B1AC7A7E24F03BC0002788CE /* SignUpViewController.swift in Sources */,
 				B184FA3D24EF56820030C510 /* RoundedEdgeView.swift in Sources */,
+				B1A9CE9524F1D77600B61776 /* QRScannerView.swift in Sources */,
 				B1A9CE7D24F1825500B61776 /* LoadingView.swift in Sources */,
 				B102F51324F0BEE6009C7806 /* User.swift in Sources */,
 				B1A9CE8024F18FAC00B61776 /* PaymentWall.xcdatamodeld in Sources */,
@@ -346,9 +353,10 @@
 				B1AC7A8A24F04048002788CE /* Pallete.swift in Sources */,
 				B1A9CE7B24F17CF500B61776 /* SettingsManager.swift in Sources */,
 				B1A9CE8F24F198B900B61776 /* Transactions+CoreDataClass.swift in Sources */,
+				B1A9CE9724F1D79B00B61776 /* QRScannerViewController.swift in Sources */,
 				B1AC7A8624F03F1A002788CE /* Toast.swift in Sources */,
-				B184FA2824EF3FBA0030C510 /* SceneDelegate.swift in Sources */,
 				B1B5D4AA24F08F840057C153 /* CircularImageView.swift in Sources */,
+				B1A9CE9924F1E8CF00B61776 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,7 +502,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U9VXC5VK35;
 				INFOPLIST_FILE = PaymentWallTask/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -512,7 +522,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U9VXC5VK35;
 				INFOPLIST_FILE = PaymentWallTask/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

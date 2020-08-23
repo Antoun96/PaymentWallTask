@@ -80,10 +80,14 @@ class CoreDataHelper {
         
         do {
            try context.save()
-            action!(user)
+            if action != nil{
+                action!(user)
+            }
           } catch {
            print("Failed saving")
-            action!(nil)
+            if action != nil{
+                action!(nil)
+            }
         }
     }
     

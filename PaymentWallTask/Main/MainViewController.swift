@@ -82,9 +82,10 @@ class MainViewController: UIViewController {
                 
                 tabLabels[1].textColor = .orange
                 tabButton[1].setImage(UIImage(named: "ic_qrcode_selected"), for: .normal)
-                
+                qrScanner()
                 break
             case 2:
+                
                 tabLabels[2].textColor = .orange
                 tabButton[2].setImage(UIImage(named: "ic_profile_selected"), for: .normal)
                 profile()
@@ -101,6 +102,13 @@ class MainViewController: UIViewController {
     func wallet() {
         
         let vc = storyboard!.instantiateViewController(withIdentifier: "WalletViewController") as! WalletViewController
+        
+        replaceChild(viewController: vc)
+    }
+    
+    func qrScanner() {
+        
+        let vc = storyboard!.instantiateViewController(withIdentifier: "QRScannerViewController") as! QRScannerViewController
         
         replaceChild(viewController: vc)
     }
