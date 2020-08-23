@@ -116,12 +116,97 @@ class CoreDataHelper {
         }
     }
     
+    public func createPaymet(product: Product, action: ((_: Bool)-> Void)){
+        
+        let entity = NSEntityDescription.entity(forEntityName: "TRANSACTIONS", in: context)
+        let newUser = NSManagedObject(entity: entity!, insertInto: context)
+        
+        let manager = SettingsManager()
+        
+        newUser.setValue(product.name, forKey: "productName")
+        newUser.setValue(product.image_url, forKey: "productImage")
+        newUser.setValue(product.description, forKey: "productDescription")
+        newUser.setValue(manager.getId(), forKey: "userId")
+        
+        let total = product.price + product.tax
+        newUser.setValue(total, forKey: "price")
+        
+        let date = Date()
+        newUser.setValue(date, forKey: "date")
+        
+        let id = getAutoIncremenet(name: "TRANSACTIONS")
+        newUser.setValue(id, forKey: "id")
+        
+        do {
+            try context.save()
+            action(true)
+            
+            changeBalance(id: manager.getId(), newBalance: manager.getBalance()-total)
+          
+        } catch {
+           print("Failed saving")
+            
+            action(false)
+        }
+    }
+    
+    private func changeBalance(id: Int, newBalance: Double){
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "USERS")
+        request.predicate = NSPredicate(format: "id = \(id)")
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            
+            if result.count > 0{
+                
+                (result as! [NSManagedObject])[0].setValue(newBalance, forKey: "balance")
+                SettingsManager().setBalance(value: newBalance)
+                try context.save()
+            }
+        } catch {
+            
+            print("Failed")
+        }
+    }
+    
+    public func getPaymentHistory(id: Int, products:((_: [Product]?)-> Void)?){
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "TRANSACTIONS")
+        request.predicate = NSPredicate(format: "userId = \(id)")
+        request.returnsObjectsAsFaults = false
+        
+        var productsArray = [Product]()
+        do {
+            let result = try context.fetch(request)
+            
+            for data in result as! [NSManagedObject]{
+                
+                let product = Product()
+                product.setValues(data: data)
+                productsArray.append(product)
+                
+            }
+            
+            if productsArray.count > 0{
+                products!(productsArray)
+            }else {
+                products!(nil)
+            }
+            
+        } catch {
+            
+            print("Failed")
+            products!(nil)
+        }
+    }
+    
     func getAutoIncremenet(name: String) -> Int   {
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: name)
 
         // Sort Descriptor
-        var idDescriptor: NSSortDescriptor = NSSortDescriptor(key: "id", ascending: false)
+        let idDescriptor: NSSortDescriptor = NSSortDescriptor(key: "id", ascending: false)
         fetchRequest.sortDescriptors = [idDescriptor]
 
         fetchRequest.fetchLimit = 1

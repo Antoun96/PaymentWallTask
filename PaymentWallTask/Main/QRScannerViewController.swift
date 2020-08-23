@@ -21,13 +21,14 @@ class QRScannerViewController: UIViewController, QRScannerViewDelegate {
 
         qrScannerView.delegate = self
         
-        self.qrScannerView.startScanning()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
          navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        self.qrScannerView.startScanning()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -35,11 +36,26 @@ class QRScannerViewController: UIViewController, QRScannerViewDelegate {
     }
     
     func qrScanningDidFail() {
-        
+        self.qrScannerView.startScanning()
     }
     
     func qrScanningSucceededWithCode(_ str: String?) {
-        
+        if let code = str, let data = code.data(using: .utf8), let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: Any] {
+            
+            let d = json["data"] as! [String: Any]
+            
+            let product = Product(json: d)
+            
+            let vc = storyboard?.instantiateViewController(withIdentifier: "PaymentDetailsViewController") as! PaymentDetailsViewController
+            
+            vc.product = product
+            
+            self.show(vc, sender: self)
+            
+        } else {
+            
+            qrScanningDidFail()
+        }
     }
     
     func qrScanningDidStop() {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B102F51324F0BEE6009C7806 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B102F51224F0BEE6009C7806 /* User.swift */; };
+		B133A20924F2C76900CF829F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = B133A20824F2C76900CF829F /* Product.swift */; };
 		B184FA2624EF3FBA0030C510 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184FA2524EF3FBA0030C510 /* AppDelegate.swift */; };
 		B184FA2A24EF3FBA0030C510 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184FA2924EF3FBA0030C510 /* MainViewController.swift */; };
 		B184FA2D24EF3FBA0030C510 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B184FA2B24EF3FBA0030C510 /* Main.storyboard */; };
@@ -17,6 +18,9 @@
 		B184FA3D24EF56820030C510 /* RoundedEdgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184FA3C24EF56820030C510 /* RoundedEdgeView.swift */; };
 		B184FA4024EF57660030C510 /* UIExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184FA3F24EF57660030C510 /* UIExtentions.swift */; };
 		B184FA4224EF5BC20030C510 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184FA4124EF5BC20030C510 /* SignInViewController.swift */; };
+		B1A2E9FF24F30D6600FA9BD3 /* TransactionSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2E9FE24F30D6600FA9BD3 /* TransactionSuccessViewController.swift */; };
+		B1A2EA0324F3205700FA9BD3 /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2EA0124F3205700FA9BD3 /* PaymentHistoryTableViewCell.swift */; };
+		B1A2EA0424F3205700FA9BD3 /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1A2EA0224F3205700FA9BD3 /* PaymentHistoryTableViewCell.xib */; };
 		B1A9CE7B24F17CF500B61776 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE7A24F17CF500B61776 /* SettingsManager.swift */; };
 		B1A9CE7D24F1825500B61776 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE7C24F1825500B61776 /* LoadingView.swift */; };
 		B1A9CE8024F18FAC00B61776 /* PaymentWall.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE7E24F18FAC00B61776 /* PaymentWall.xcdatamodeld */; };
@@ -45,6 +49,7 @@
 		55AB58265DB91DA8551FA5D1 /* Pods-PaymentWallTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaymentWallTask.release.xcconfig"; path = "Target Support Files/Pods-PaymentWallTask/Pods-PaymentWallTask.release.xcconfig"; sourceTree = "<group>"; };
 		61BD3B7D906AA8D7B70D47D1 /* Pods_PaymentWallTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PaymentWallTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B102F51224F0BEE6009C7806 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B133A20824F2C76900CF829F /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		B184FA2224EF3FBA0030C510 /* PaymentWallTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaymentWallTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B184FA2524EF3FBA0030C510 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B184FA2924EF3FBA0030C510 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +61,9 @@
 		B184FA3C24EF56820030C510 /* RoundedEdgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedEdgeView.swift; sourceTree = "<group>"; };
 		B184FA3F24EF57660030C510 /* UIExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtentions.swift; sourceTree = "<group>"; };
 		B184FA4124EF5BC20030C510 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		B1A2E9FE24F30D6600FA9BD3 /* TransactionSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSuccessViewController.swift; sourceTree = "<group>"; };
+		B1A2EA0124F3205700FA9BD3 /* PaymentHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		B1A2EA0224F3205700FA9BD3 /* PaymentHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		B1A9CE7A24F17CF500B61776 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		B1A9CE7C24F1825500B61776 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		B1A9CE7F24F18FAC00B61776 /* PaymentWall.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PaymentWall.xcdatamodel; sourceTree = "<group>"; };
@@ -102,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				B102F51224F0BEE6009C7806 /* User.swift */,
+				B133A20824F2C76900CF829F /* Product.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -127,6 +136,7 @@
 		B184FA2424EF3FBA0030C510 /* PaymentWallTask */ = {
 			isa = PBXGroup;
 			children = (
+				B1A2EA0024F3202500FA9BD3 /* Cells */,
 				B102F51124F0BED6009C7806 /* Models */,
 				B1AC7A8024F03C2C002788CE /* Utils */,
 				B1AC7A7F24F03BE7002788CE /* Storage */,
@@ -165,6 +175,15 @@
 				B1A9CE9424F1D77600B61776 /* QRScannerView.swift */,
 			);
 			path = Widgets;
+			sourceTree = "<group>";
+		};
+		B1A2EA0024F3202500FA9BD3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B1A2EA0124F3205700FA9BD3 /* PaymentHistoryTableViewCell.swift */,
+				B1A2EA0224F3205700FA9BD3 /* PaymentHistoryTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		B1A9CE8124F197A800B61776 /* CoreDataModels */ = {
@@ -206,6 +225,7 @@
 				B1A9CE9624F1D79B00B61776 /* QRScannerViewController.swift */,
 				B1B5D4AB24F093720057C153 /* ProfileViewController.swift */,
 				B1A9CE9A24F1F12C00B61776 /* PaymentDetailsViewController.swift */,
+				B1A2E9FE24F30D6600FA9BD3 /* TransactionSuccessViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -280,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B184FA3224EF3FBB0030C510 /* LaunchScreen.storyboard in Resources */,
+				B1A2EA0424F3205700FA9BD3 /* PaymentHistoryTableViewCell.xib in Resources */,
 				B184FA2F24EF3FBB0030C510 /* Assets.xcassets in Resources */,
 				B1AC7A8824F03FDD002788CE /* Localizable.strings in Resources */,
 				B184FA3B24EF495B0030C510 /* Account.storyboard in Resources */,
@@ -345,6 +366,7 @@
 				B1A9CE9524F1D77600B61776 /* QRScannerView.swift in Sources */,
 				B1A9CE7D24F1825500B61776 /* LoadingView.swift in Sources */,
 				B102F51324F0BEE6009C7806 /* User.swift in Sources */,
+				B1A2EA0324F3205700FA9BD3 /* PaymentHistoryTableViewCell.swift in Sources */,
 				B1A9CE8024F18FAC00B61776 /* PaymentWall.xcdatamodeld in Sources */,
 				B1AC7A8224F03C53002788CE /* Validate.swift in Sources */,
 				B1A9CE8E24F198B900B61776 /* Transactions+CoreDataProperties.swift in Sources */,
@@ -360,7 +382,9 @@
 				B1A9CE9724F1D79B00B61776 /* QRScannerViewController.swift in Sources */,
 				B1AC7A8624F03F1A002788CE /* Toast.swift in Sources */,
 				B1B5D4AA24F08F840057C153 /* CircularImageView.swift in Sources */,
+				B1A2E9FF24F30D6600FA9BD3 /* TransactionSuccessViewController.swift in Sources */,
 				B1A9CE9924F1E8CF00B61776 /* SceneDelegate.swift in Sources */,
+				B133A20924F2C76900CF829F /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

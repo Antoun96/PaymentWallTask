@@ -7,6 +7,7 @@ target 'PaymentWallTask' do
 
   # Pods for PaymentWallTask
 
-pod 'IQKeyboardManagerSwift'
-
+  pod 'IQKeyboardManagerSwift'
+  pod 'SDWebImage'
+ 
 end

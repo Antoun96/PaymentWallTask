@@ -93,8 +93,8 @@ class SettingsManager {
         let _ =  save(object: value, setting: Settings.Id)
     }
     
-    func getId() -> String {
-        return userDefault.object(forKey: Settings.Id.rawValue) as! String
+    func getId() -> Int {
+        return userDefault.object(forKey: Settings.Id.rawValue) as! Int
     }
     
     func setBalance (value:Double){

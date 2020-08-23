@@ -19,3 +19,7 @@
 "registration_error" = "Error Occured While Registeration";
 
 "wrong_credintials" = "Wrong Credintials";
+
+"not_enough_balance" = "You don't have enough balance";
+
+"error_while_transaction" = "Sorry, Error occured while transactions";
