@@ -28,6 +28,7 @@
 		B1A9CE9524F1D77600B61776 /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE9424F1D77600B61776 /* QRScannerView.swift */; };
 		B1A9CE9724F1D79B00B61776 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE9624F1D79B00B61776 /* QRScannerViewController.swift */; };
 		B1A9CE9924F1E8CF00B61776 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE9824F1E8CE00B61776 /* SceneDelegate.swift */; };
+		B1A9CE9B24F1F12C00B61776 /* PaymentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE9A24F1F12C00B61776 /* PaymentDetailsViewController.swift */; };
 		B1AC7A7E24F03BC0002788CE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AC7A7D24F03BC0002788CE /* SignUpViewController.swift */; };
 		B1AC7A8224F03C53002788CE /* Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AC7A8124F03C53002788CE /* Validate.swift */; };
 		B1AC7A8624F03F1A002788CE /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AC7A8524F03F1A002788CE /* Toast.swift */; };
@@ -66,6 +67,7 @@
 		B1A9CE9424F1D77600B61776 /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
 		B1A9CE9624F1D79B00B61776 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 		B1A9CE9824F1E8CE00B61776 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B1A9CE9A24F1F12C00B61776 /* PaymentDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsViewController.swift; sourceTree = "<group>"; };
 		B1AC7A7D24F03BC0002788CE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B1AC7A8124F03C53002788CE /* Validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validate.swift; sourceTree = "<group>"; };
 		B1AC7A8524F03F1A002788CE /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				B1B5D4A724F087690057C153 /* WalletViewController.swift */,
 				B1A9CE9624F1D79B00B61776 /* QRScannerViewController.swift */,
 				B1B5D4AB24F093720057C153 /* ProfileViewController.swift */,
+				B1A9CE9A24F1F12C00B61776 /* PaymentDetailsViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				B184FA2624EF3FBA0030C510 /* AppDelegate.swift in Sources */,
 				B184FA4024EF57660030C510 /* UIExtentions.swift in Sources */,
 				B1AC7A8A24F04048002788CE /* Pallete.swift in Sources */,
+				B1A9CE9B24F1F12C00B61776 /* PaymentDetailsViewController.swift in Sources */,
 				B1A9CE7B24F17CF500B61776 /* SettingsManager.swift in Sources */,
 				B1A9CE8F24F198B900B61776 /* Transactions+CoreDataClass.swift in Sources */,
 				B1A9CE9724F1D79B00B61776 /* QRScannerViewController.swift in Sources */,
