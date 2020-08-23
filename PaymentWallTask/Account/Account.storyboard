@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="daZ-c1-3Qs">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -184,10 +185,10 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Amp-fD-kvC" firstAttribute="width" secondItem="hsk-nJ-5l4" secondAttribute="width" id="Be9-hO-KLH"/>
-                                    <constraint firstItem="Amp-fD-kvC" firstAttribute="trailing" secondItem="HGy-aI-9Td" secondAttribute="trailing" constant="414" id="Edb-4Y-4mD"/>
+                                    <constraint firstItem="Amp-fD-kvC" firstAttribute="trailing" secondItem="HGy-aI-9Td" secondAttribute="trailing" id="Edb-4Y-4mD"/>
                                     <constraint firstItem="Amp-fD-kvC" firstAttribute="top" secondItem="HGy-aI-9Td" secondAttribute="top" id="KaE-4M-oFy"/>
                                     <constraint firstItem="Amp-fD-kvC" firstAttribute="leading" secondItem="HGy-aI-9Td" secondAttribute="leading" id="P4d-VI-84O"/>
-                                    <constraint firstItem="Amp-fD-kvC" firstAttribute="bottom" secondItem="HGy-aI-9Td" secondAttribute="bottom" constant="156" id="j77-37-Fpm"/>
+                                    <constraint firstItem="Amp-fD-kvC" firstAttribute="bottom" secondItem="HGy-aI-9Td" secondAttribute="bottom" id="j77-37-Fpm"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="HGy-aI-9Td"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="hsk-nJ-5l4"/>

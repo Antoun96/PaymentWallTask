@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import AVFoundation
 
-class QRScannerViewController: UIViewController {
+class QRScannerViewController: UIViewController, QRScannerViewDelegate {
 
     @IBOutlet weak var qrScannerView: QRScannerView!
 //    @IBOutlet weak var labelScannerMessage: UILabel!
@@ -18,7 +19,31 @@ class QRScannerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        qrScannerView.delegate = self
+        
+        self.qrScannerView.startScanning()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+         navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+         navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    func qrScanningDidFail() {
+        
+    }
+    
+    func qrScanningSucceededWithCode(_ str: String?) {
+        
+    }
+    
+    func qrScanningDidStop() {
+        
     }
 
 }
