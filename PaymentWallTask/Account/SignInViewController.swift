@@ -59,11 +59,11 @@ class SignInViewController: UIViewController {
             
             coreDataHelper.signIn(email: textFieldEmail.text!, password: textFieldPassword.text!) { (usr) in
                 
+                loadingView.setIsLoading(false)
+                
                 if usr != nil{
                     
                     SettingsManager().updateUser(user: usr)
-                    
-                    loadingView.setIsLoading(false)
                     
                     let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
                     
@@ -72,34 +72,10 @@ class SignInViewController: UIViewController {
                     window.rootViewController = vc
                     window.makeKeyAndVisible()
                 }else {
-                    loadingView.setIsLoading(false)
                     Toast.showAlert(viewController: self, text: "wrong_credintials")
                 }
             }
-            
-//            let db = DataBaseHelper.getInstance()
-//            db.signIn(email: textFieldEmail.text!, password: textFieldPassword.text!) { (usr) in
-//                
-//                if usr != nil{
-//                    
-//                    SettingsManager().updateUser(user: usr)
-//                    
-//                    loadingView.setIsLoading(false)
-//                    
-//                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
-//                    
-//                    let window = UIApplication.shared.keyWindow!
-//                    
-//                    window.rootViewController = vc
-//                    window.makeKeyAndVisible()
-//                }else {
-//                    loadingView.setIsLoading(false)
-//                    Toast.showAlert(viewController: self, text: "wrong_credintials")
-//                }
-//            }
         }
-        
-        loadingView.setIsLoading(false)
     }
     
     @IBAction func actionSignUp(_ sender: Any) {

@@ -104,11 +104,11 @@ class SignUpViewController: UIViewController {
             
             coreDataHelper.register(user: user) { (usr) in
                 
+                self.loadingView.setIsLoading(false)
+                
                 if usr != nil{
                     
                     SettingsManager().updateUser(user: usr)
-                    
-                    self.loadingView.setIsLoading(false)
                     
                     let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
                     
@@ -118,14 +118,11 @@ class SignUpViewController: UIViewController {
                     window.makeKeyAndVisible()
                 }else {
                     
-                    self.loadingView.setIsLoading(false)
                     Toast.showAlert(viewController: self, text: "registration_error")
                 }
                 
             }
         }
-        
-        loadingView.setIsLoading(false)
     }
     
     @IBAction func actionSignIn(_ sender: Any) {

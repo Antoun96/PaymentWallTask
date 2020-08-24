@@ -24,9 +24,17 @@ class WalletViewController: UIViewController, UITableViewDataSource, UITableView
     
     var productsByDate = [String: [Product]]()
     
+    var loadingView: LoadingView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        loadingView = LoadingView(frame: self.view.frame)
+        loadingView.setLoadingImage(image: UIImage(named: "ic_loading")!)
+        loadingView.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+        loadingView.setIsLoading(false)
+        self.view.addSubview(loadingView)
+        
         coreDataHelper = CoreDataHelper.getInstance()
         
         tableViewPaymentHistory.register(UINib(nibName: "PaymentHistoryTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
@@ -44,7 +52,10 @@ class WalletViewController: UIViewController, UITableViewDataSource, UITableView
         
         labelBalance.text = "$\(String(format: "%.2f", SettingsManager().getBalance()))"
         
+        loadingView.setIsLoading(true)
         coreDataHelper.getPaymentHistory(id: SettingsManager().getId()) { (products) in
+            
+            self.loadingView.setIsLoading(false)
             
             if products == nil{
                 
