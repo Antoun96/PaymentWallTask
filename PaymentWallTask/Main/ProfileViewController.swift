@@ -14,23 +14,26 @@ class ProfileViewController: UIViewController {
     
     var manager: SettingsManager!
     
+    @IBOutlet weak var viewLogout: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         manager = SettingsManager()
         
         labelUsername.text = "\(manager.getFirstName()) \(manager.getLastName())"
+        
+        viewLogout.addTapGestureRecognizer {
+            
+            self.manager.setLoggedIn(value: false)
+            
+            let vc = UIStoryboard(name: "Account", bundle: nil).instantiateInitialViewController()
+            
+            let window = UIApplication.shared.keyWindow!
+            
+            window.rootViewController = vc
+            window.makeKeyAndVisible()
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
