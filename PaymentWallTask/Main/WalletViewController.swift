@@ -22,9 +22,12 @@ class WalletViewController: UIViewController, UITableViewDataSource, UITableView
     
     var products = [Product]()
     
-    var productsByDate = [String: [Product]]()
+    var sectionDates = [String]()
+    var sectionSize = [Int]()
     
     var loadingView: LoadingView!
+    
+    var refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,12 +48,27 @@ class WalletViewController: UIViewController, UITableViewDataSource, UITableView
         tableViewPaymentHistory.dataSource = self
         tableViewPaymentHistory.reloadData()
         
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         labelBalance.text = "$\(String(format: "%.2f", SettingsManager().getBalance()))"
+        
+        getHistory()
+        
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+       
+        getHistory()
+        
+    }
+    
+    func getHistory() {
         
         loadingView.setIsLoading(true)
         coreDataHelper.getPaymentHistory(id: SettingsManager().getId()) { (products) in
@@ -64,48 +82,30 @@ class WalletViewController: UIViewController, UITableViewDataSource, UITableView
                 self.tableViewPaymentHistory.isHidden = false
                 self.labelNoRecords.isHidden = true
                 
-                self.products = products
+                // products are already sorted so we need to get the dates and count of items for each day for the table view section title and size
                 
-                for p in self.products{
+                self.products = products
+                for p in products{
                     
-                    if self.productsByDate[p.date]?.count ?? 0 > 0{
-                        // has elements before
-                        
-                        var tempProducts = self.productsByDate[p.date]
-                        tempProducts?.append(p)
-                        
-                        self.productsByDate[p.date] = tempProducts
-                        
-                    }else{
-                        
-                        var tempProducts = [Product]()
-                        tempProducts.append(p)
-                        
-                        self.productsByDate[p.date] = tempProducts
+                    if !sectionDates.contains(p.date){
+                        sectionDates.append(p.date)
+                        sectionSize.append(1)
+                    }else {
+                        sectionSize[sectionDates.firstIndex(of: p.date)!] += 1
                     }
+                   
                 }
                 
                 self.tableViewPaymentHistory.reloadData()
                 self.constraintTableHeight.constant = self.tableViewPaymentHistory.contentSize.height
                 self.tableViewPaymentHistory.setNeedsUpdateConstraints()
             }
-            
         }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        var i = 0;
-        for (_, products) in productsByDate {
-            
-            if i == section{
-                return products.count
-            }
-            
-            i+=1
-        }
-        
-        return productsByDate.count
+        return sectionSize[section]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -118,7 +118,7 @@ class WalletViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return productsByDate.keys.count
+        return sectionDates.count
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -126,17 +126,7 @@ class WalletViewController: UIViewController, UITableViewDataSource, UITableView
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:
                     "sectionHeader") as! PaymentSectionTableViewHeaderFooterView
         
-        var i = 0;
-        for (kind, _) in productsByDate {
-            
-            if i == section{
-                view.labelDate.text = kind
-                
-                return view
-            }
-            
-            i+=1
-        }
+        view.labelDate.text = sectionDates[section]
         
         return view
     }
