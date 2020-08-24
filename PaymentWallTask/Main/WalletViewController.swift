@@ -66,6 +66,7 @@ class WalletViewController: UIViewController, UITableViewDataSource, UITableView
        
         getHistory()
         
+        refreshControl.endRefreshing()
     }
     
     func getHistory() {
