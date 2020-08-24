@@ -42,79 +42,8 @@ class CoreDataHelper {
         self.persistentContainer = persistentContainer
         
         context = persistentContainer.viewContext
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "USERS")
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try context.fetch(request)
-            if result.count == 0{
-               
-                register(user: User(email: "a@mail.com", firstName: "Antoun", lastName: "William", password: "Passw0rd", balance: 600), action: nil)
-                
-                register(user: User(email: "antoun@mail.com", firstName: "Antoun", lastName: "William", password: "Passw0rd", balance: 600), action: nil)
-            
-                register(user: User(email: "ab@mail.com", firstName: "Antoun", lastName: "William", password: "Passw0rd", balance: 600), action: nil)
-            }
-            
-        } catch {
-            
-            print("Failed")
-        }
     }
     
-    public func register(user: User, action: ((_: User?)-> Void)?){
-        
-        let entity = NSEntityDescription.entity(forEntityName: "USERS", in: context)
-        let newUser = NSManagedObject(entity: entity!, insertInto: context)
-        newUser.setValue(user.balance, forKey: "balance")
-        newUser.setValue(user.password, forKey: "password")
-        newUser.setValue(user.firstName, forKey: "firstName")
-        newUser.setValue(user.lastName, forKey: "lastName")
-        newUser.setValue(user.email, forKey: "email")
-        
-        let id = getAutoIncremenet(name: "USERS")
-        
-        newUser.setValue(id, forKey: "id")
-        
-        user.id = id
-        
-        do {
-           try context.save()
-            if action != nil{
-                action!(user)
-            }
-          } catch {
-           print("Failed saving")
-            if action != nil{
-                action!(nil)
-            }
-        }
-    }
-    
-    public func signIn(email: String, password: String, usr:((_: User?)-> Void)){
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "USERS")
-        request.predicate = NSPredicate(format: "email = %@", email)
-        request.predicate = NSPredicate(format: "password = %@", password)
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try context.fetch(request)
-            
-            let user = User()
-            
-            if result.count > 0{
-                
-                user.setValues(data: (result as! [NSManagedObject])[0])
-                usr(user)
-            }else{
-                usr(nil)
-            }
-        } catch {
-            
-            print("Failed")
-            usr(nil)
-        }
-    }
     
     public func createPaymet(product: Product, action: ((_: Bool)-> Void)){
         
@@ -153,7 +82,7 @@ class CoreDataHelper {
     
     private func changeBalance(id: Int, newBalance: Double){
         
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "USERS")
+        let request: NSFetchRequest<User> = User.fetchRequest()
         request.predicate = NSPredicate(format: "id = \(id)")
         request.returnsObjectsAsFaults = false
         do {
@@ -173,7 +102,7 @@ class CoreDataHelper {
     
     public func getPaymentHistory(id: Int, products:((_: [Product])-> Void)){
         
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "TRANSACTIONS")
+        let request: NSFetchRequest<Transaction> = Transaction.fetchRequest()
         request.predicate = NSPredicate(format: "userId = \(id)")
         
         let sectionSortDescriptor = NSSortDescriptor(key: "date", ascending: false)
@@ -204,7 +133,49 @@ class CoreDataHelper {
         }
     }
     
-    func getAutoIncremenet(name: String) -> Int   {
+    func registerBasicAccounts(){
+        
+        let request: NSFetchRequest<User> = User.fetchRequest()
+        
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            if result.count == 0{
+               
+                let user1 = User()
+                user1.email = "a@mail.com"
+                user1.firstName = "Antoun"
+                user1.lastName = "William"
+                user1.password = "Passw0rd"
+                user1.balance = 600
+                user1.register(action: nil)
+                
+                let user2 = User()
+                user2.email = "antoun@mail.com"
+                user2.firstName = "Antoun"
+                user2.lastName = "William"
+                user2.password = "Passw0rd"
+                user2.balance = 600
+                user2.register(action: nil)
+                
+                let user3 = User()
+                user3.email = "ab@mail.com"
+                user3.firstName = "Antoun"
+                user3.lastName = "William"
+                user3.password = "Passw0rd"
+                user3.balance = 600
+                user3.register(action: nil)
+                
+               
+            }
+            
+        } catch {
+            
+            print("Failed")
+        }
+    }
+    
+    public func getAutoIncremenet(name: String) -> Int   {
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: name)
 

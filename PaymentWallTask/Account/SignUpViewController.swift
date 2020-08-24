@@ -23,25 +23,13 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var labelTerms: UILabel!
     
-    var user: User!
-   
-    var loadingView: LoadingView!
-    
-    var coreDataHelper: CoreDataHelper!
+    var user = User()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadingView = LoadingView(frame: self.view.frame)
-        loadingView.setLoadingImage(image: UIImage(named: "ic_loading")!)
-        loadingView.backgroundColor = UIColor.white.withAlphaComponent(0.8)
-        loadingView.setIsLoading(false)
-        self.view.addSubview(loadingView)
-        
         labelTerms.isUserInteractionEnabled = true
         labelTerms.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapOnLabel(_:))))
-        
-        coreDataHelper = CoreDataHelper.getInstance()
         
     }
     
@@ -86,7 +74,6 @@ class SignUpViewController: UIViewController {
             return false
         }
         
-        user = User()
         user.email = textFieldEmail.text
         user.firstName = textFieldFirstName.text
         user.lastName = textFieldLastName.text
@@ -97,15 +84,11 @@ class SignUpViewController: UIViewController {
     }
 
     @IBAction func actionSignUp(_ sender: Any) {
-        
-        loadingView.setIsLoading(true)
-        
+       
         if validateSignUp(){
             
-            coreDataHelper.register(user: user) { (usr) in
-                
-                self.loadingView.setIsLoading(false)
-                
+            user.register() { (usr) in
+           
                 if usr != nil{
                     
                     SettingsManager().updateUser(user: usr)
@@ -117,7 +100,6 @@ class SignUpViewController: UIViewController {
                     window.rootViewController = vc
                     window.makeKeyAndVisible()
                 }else {
-                    
                     Toast.showAlert(viewController: self, text: "registration_error")
                 }
                 

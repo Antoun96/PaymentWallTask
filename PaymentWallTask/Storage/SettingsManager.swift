@@ -33,11 +33,11 @@ class SettingsManager {
 
             if user.id > 0{
                 setIsloggedIn(value: true)
-                setId(value: user.id)
-                setFirstName(value: user.firstName)
-                setLastName(value: user.lastName)
+                setId(value: Int(user.id))
+                setFirstName(value: user.firstName!)
+                setLastName(value: user.lastName!)
                 setBalance(value: user.balance)
-                setEmail(value: user.email)
+                setEmail(value: user.email!)
             }
             
         } else {

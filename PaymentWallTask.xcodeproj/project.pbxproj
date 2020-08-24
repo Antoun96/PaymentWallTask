@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B102F51324F0BEE6009C7806 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B102F51224F0BEE6009C7806 /* User.swift */; };
 		B133A20924F2C76900CF829F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = B133A20824F2C76900CF829F /* Product.swift */; };
 		B184FA2624EF3FBA0030C510 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184FA2524EF3FBA0030C510 /* AppDelegate.swift */; };
 		B184FA2A24EF3FBA0030C510 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184FA2924EF3FBA0030C510 /* MainViewController.swift */; };
@@ -18,17 +17,16 @@
 		B184FA3D24EF56820030C510 /* RoundedEdgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184FA3C24EF56820030C510 /* RoundedEdgeView.swift */; };
 		B184FA4024EF57660030C510 /* UIExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184FA3F24EF57660030C510 /* UIExtentions.swift */; };
 		B184FA4224EF5BC20030C510 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184FA4124EF5BC20030C510 /* SignInViewController.swift */; };
+		B191C15724F4578800D8E9EA /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B191C15324F4578800D8E9EA /* User+CoreDataProperties.swift */; };
+		B191C15824F4578800D8E9EA /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B191C15424F4578800D8E9EA /* User+CoreDataClass.swift */; };
+		B191C15924F4578800D8E9EA /* Transaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B191C15524F4578800D8E9EA /* Transaction+CoreDataProperties.swift */; };
+		B191C15A24F4578800D8E9EA /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B191C15624F4578800D8E9EA /* Transaction+CoreDataClass.swift */; };
 		B1A2E9FF24F30D6600FA9BD3 /* TransactionSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2E9FE24F30D6600FA9BD3 /* TransactionSuccessViewController.swift */; };
 		B1A2EA0324F3205700FA9BD3 /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2EA0124F3205700FA9BD3 /* PaymentHistoryTableViewCell.swift */; };
 		B1A2EA0424F3205700FA9BD3 /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1A2EA0224F3205700FA9BD3 /* PaymentHistoryTableViewCell.xib */; };
 		B1A2EA0A24F3366300FA9BD3 /* PaymentSectionTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2EA0924F3366300FA9BD3 /* PaymentSectionTableViewHeaderFooterView.swift */; };
 		B1A9CE7B24F17CF500B61776 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE7A24F17CF500B61776 /* SettingsManager.swift */; };
-		B1A9CE7D24F1825500B61776 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE7C24F1825500B61776 /* LoadingView.swift */; };
 		B1A9CE8024F18FAC00B61776 /* PaymentWall.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE7E24F18FAC00B61776 /* PaymentWall.xcdatamodeld */; };
-		B1A9CE8E24F198B900B61776 /* Transactions+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE8A24F198B900B61776 /* Transactions+CoreDataProperties.swift */; };
-		B1A9CE8F24F198B900B61776 /* Transactions+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE8B24F198B900B61776 /* Transactions+CoreDataClass.swift */; };
-		B1A9CE9024F198B900B61776 /* USERS+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE8C24F198B900B61776 /* USERS+CoreDataProperties.swift */; };
-		B1A9CE9124F198B900B61776 /* USERS+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE8D24F198B900B61776 /* USERS+CoreDataClass.swift */; };
 		B1A9CE9324F19E0E00B61776 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE9224F19E0E00B61776 /* CoreDataHelper.swift */; };
 		B1A9CE9524F1D77600B61776 /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE9424F1D77600B61776 /* QRScannerView.swift */; };
 		B1A9CE9724F1D79B00B61776 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE9624F1D79B00B61776 /* QRScannerViewController.swift */; };
@@ -49,7 +47,6 @@
 		09BB050F67F4292152B80936 /* Pods-PaymentWallTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaymentWallTask.debug.xcconfig"; path = "Target Support Files/Pods-PaymentWallTask/Pods-PaymentWallTask.debug.xcconfig"; sourceTree = "<group>"; };
 		55AB58265DB91DA8551FA5D1 /* Pods-PaymentWallTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaymentWallTask.release.xcconfig"; path = "Target Support Files/Pods-PaymentWallTask/Pods-PaymentWallTask.release.xcconfig"; sourceTree = "<group>"; };
 		61BD3B7D906AA8D7B70D47D1 /* Pods_PaymentWallTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PaymentWallTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B102F51224F0BEE6009C7806 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B133A20824F2C76900CF829F /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		B184FA2224EF3FBA0030C510 /* PaymentWallTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaymentWallTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B184FA2524EF3FBA0030C510 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,17 +59,16 @@
 		B184FA3C24EF56820030C510 /* RoundedEdgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedEdgeView.swift; sourceTree = "<group>"; };
 		B184FA3F24EF57660030C510 /* UIExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtentions.swift; sourceTree = "<group>"; };
 		B184FA4124EF5BC20030C510 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		B191C15324F4578800D8E9EA /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B191C15424F4578800D8E9EA /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B191C15524F4578800D8E9EA /* Transaction+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B191C15624F4578800D8E9EA /* Transaction+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B1A2E9FE24F30D6600FA9BD3 /* TransactionSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSuccessViewController.swift; sourceTree = "<group>"; };
 		B1A2EA0124F3205700FA9BD3 /* PaymentHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		B1A2EA0224F3205700FA9BD3 /* PaymentHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		B1A2EA0924F3366300FA9BD3 /* PaymentSectionTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSectionTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		B1A9CE7A24F17CF500B61776 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
-		B1A9CE7C24F1825500B61776 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		B1A9CE7F24F18FAC00B61776 /* PaymentWall.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PaymentWall.xcdatamodel; sourceTree = "<group>"; };
-		B1A9CE8A24F198B900B61776 /* Transactions+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Transactions+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		B1A9CE8B24F198B900B61776 /* Transactions+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Transactions+CoreDataClass.swift"; sourceTree = "<group>"; };
-		B1A9CE8C24F198B900B61776 /* USERS+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "USERS+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		B1A9CE8D24F198B900B61776 /* USERS+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "USERS+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B1A9CE9224F19E0E00B61776 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		B1A9CE9424F1D77600B61776 /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
 		B1A9CE9624F1D79B00B61776 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
@@ -111,7 +107,6 @@
 		B102F51124F0BED6009C7806 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B102F51224F0BEE6009C7806 /* User.swift */,
 				B133A20824F2C76900CF829F /* Product.swift */,
 			);
 			path = Models;
@@ -173,7 +168,6 @@
 				B184FA3F24EF57660030C510 /* UIExtentions.swift */,
 				B1AC7A8924F04048002788CE /* Pallete.swift */,
 				B1B5D4A924F08F840057C153 /* CircularImageView.swift */,
-				B1A9CE7C24F1825500B61776 /* LoadingView.swift */,
 				B1A9CE9424F1D77600B61776 /* QRScannerView.swift */,
 			);
 			path = Widgets;
@@ -192,10 +186,10 @@
 		B1A9CE8124F197A800B61776 /* CoreDataModels */ = {
 			isa = PBXGroup;
 			children = (
-				B1A9CE8B24F198B900B61776 /* Transactions+CoreDataClass.swift */,
-				B1A9CE8A24F198B900B61776 /* Transactions+CoreDataProperties.swift */,
-				B1A9CE8D24F198B900B61776 /* USERS+CoreDataClass.swift */,
-				B1A9CE8C24F198B900B61776 /* USERS+CoreDataProperties.swift */,
+				B191C15624F4578800D8E9EA /* Transaction+CoreDataClass.swift */,
+				B191C15524F4578800D8E9EA /* Transaction+CoreDataProperties.swift */,
+				B191C15424F4578800D8E9EA /* User+CoreDataClass.swift */,
+				B191C15324F4578800D8E9EA /* User+CoreDataProperties.swift */,
 			);
 			path = CoreDataModels;
 			sourceTree = "<group>";
@@ -362,30 +356,28 @@
 			files = (
 				B184FA2A24EF3FBA0030C510 /* MainViewController.swift in Sources */,
 				B1A9CE9324F19E0E00B61776 /* CoreDataHelper.swift in Sources */,
-				B1A9CE9124F198B900B61776 /* USERS+CoreDataClass.swift in Sources */,
 				B1A2EA0A24F3366300FA9BD3 /* PaymentSectionTableViewHeaderFooterView.swift in Sources */,
-				B1A9CE9024F198B900B61776 /* USERS+CoreDataProperties.swift in Sources */,
 				B1AC7A7E24F03BC0002788CE /* SignUpViewController.swift in Sources */,
 				B184FA3D24EF56820030C510 /* RoundedEdgeView.swift in Sources */,
+				B191C15924F4578800D8E9EA /* Transaction+CoreDataProperties.swift in Sources */,
 				B1A9CE9524F1D77600B61776 /* QRScannerView.swift in Sources */,
-				B1A9CE7D24F1825500B61776 /* LoadingView.swift in Sources */,
-				B102F51324F0BEE6009C7806 /* User.swift in Sources */,
 				B1A2EA0324F3205700FA9BD3 /* PaymentHistoryTableViewCell.swift in Sources */,
+				B191C15724F4578800D8E9EA /* User+CoreDataProperties.swift in Sources */,
 				B1A9CE8024F18FAC00B61776 /* PaymentWall.xcdatamodeld in Sources */,
 				B1AC7A8224F03C53002788CE /* Validate.swift in Sources */,
-				B1A9CE8E24F198B900B61776 /* Transactions+CoreDataProperties.swift in Sources */,
 				B1B5D4AC24F093720057C153 /* ProfileViewController.swift in Sources */,
 				B184FA4224EF5BC20030C510 /* SignInViewController.swift in Sources */,
 				B1B5D4A824F087690057C153 /* WalletViewController.swift in Sources */,
 				B184FA2624EF3FBA0030C510 /* AppDelegate.swift in Sources */,
 				B184FA4024EF57660030C510 /* UIExtentions.swift in Sources */,
+				B191C15824F4578800D8E9EA /* User+CoreDataClass.swift in Sources */,
 				B1AC7A8A24F04048002788CE /* Pallete.swift in Sources */,
 				B1A9CE9B24F1F12C00B61776 /* PaymentDetailsViewController.swift in Sources */,
 				B1A9CE7B24F17CF500B61776 /* SettingsManager.swift in Sources */,
-				B1A9CE8F24F198B900B61776 /* Transactions+CoreDataClass.swift in Sources */,
 				B1A9CE9724F1D79B00B61776 /* QRScannerViewController.swift in Sources */,
 				B1AC7A8624F03F1A002788CE /* Toast.swift in Sources */,
 				B1B5D4AA24F08F840057C153 /* CircularImageView.swift in Sources */,
+				B191C15A24F4578800D8E9EA /* Transaction+CoreDataClass.swift in Sources */,
 				B1A2E9FF24F30D6600FA9BD3 /* TransactionSuccessViewController.swift in Sources */,
 				B1A9CE9924F1E8CF00B61776 /* SceneDelegate.swift in Sources */,
 				B133A20924F2C76900CF829F /* Product.swift in Sources */,

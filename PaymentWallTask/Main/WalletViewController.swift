@@ -25,18 +25,10 @@ class WalletViewController: UIViewController, UITableViewDataSource, UITableView
     var sectionDates = [String]()
     var sectionSize = [Int]()
     
-    var loadingView: LoadingView!
-    
     var refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        loadingView = LoadingView(frame: self.view.frame)
-        loadingView.setLoadingImage(image: UIImage(named: "ic_loading")!)
-        loadingView.backgroundColor = UIColor.white.withAlphaComponent(0.8)
-        loadingView.setIsLoading(false)
-        self.view.addSubview(loadingView)
         
         coreDataHelper = CoreDataHelper.getInstance()
         
@@ -71,10 +63,7 @@ class WalletViewController: UIViewController, UITableViewDataSource, UITableView
     
     func getHistory() {
         
-        loadingView.setIsLoading(true)
         coreDataHelper.getPaymentHistory(id: SettingsManager().getId()) { (products) in
-            
-            self.loadingView.setIsLoading(false)
             
             if products.count == 0{
                 self.tableViewPaymentHistory.isHidden = true

@@ -13,21 +13,10 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var textFieldEmail: UITextField!
     
     @IBOutlet weak var textFieldPassword: UITextField!
-    
-    var loadingView: LoadingView!
-    
-    var coreDataHelper: CoreDataHelper!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        loadingView = LoadingView(frame: self.view.frame)
-        loadingView.setLoadingImage(image: UIImage(named: "ic_loading")!)
-        loadingView.backgroundColor = UIColor.white.withAlphaComponent(0.8)
-        loadingView.setIsLoading(false)
-        self.view.addSubview(loadingView)
-        
-        coreDataHelper = CoreDataHelper.getInstance()
     }
     
     func validateLogin() -> Bool {
@@ -53,13 +42,10 @@ class SignInViewController: UIViewController {
     
     @IBAction func actionLogin(_ sender: Any) {
         
-        loadingView.setIsLoading(true)
         
         if validateLogin(){
             
-            coreDataHelper.signIn(email: textFieldEmail.text!, password: textFieldPassword.text!) { (usr) in
-                
-                loadingView.setIsLoading(false)
+            User().signIn(email: textFieldEmail.text!, password: textFieldPassword.text!) { (usr) in
                 
                 if usr != nil{
                     
@@ -72,6 +58,7 @@ class SignInViewController: UIViewController {
                     window.rootViewController = vc
                     window.makeKeyAndVisible()
                 }else {
+                    
                     Toast.showAlert(viewController: self, text: "wrong_credintials")
                 }
             }
