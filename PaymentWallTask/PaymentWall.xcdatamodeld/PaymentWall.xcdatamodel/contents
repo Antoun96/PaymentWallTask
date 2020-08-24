@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="TRANSACTIONS" representedClassName=".Transactions" syncable="YES">
+        <attribute name="currency" optional="YES" attributeType="String"/>
         <attribute name="date" attributeType="Date" usesScalarValueType="YES"/>
         <attribute name="id" attributeType="Decimal" defaultValueString="0"/>
         <attribute name="price" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
@@ -28,7 +29,7 @@
         </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="TRANSACTIONS" positionX="248.73828125" positionY="37.21484375" width="128" height="163"/>
+        <element name="TRANSACTIONS" positionX="248.73828125" positionY="37.21484375" width="128" height="178"/>
         <element name="USERS" positionX="-63" positionY="-18" width="128" height="148"/>
     </elements>
 </model>

@@ -36,7 +36,7 @@ class PaymentHistoryTableViewCell: UITableViewCell {
        
         labelTitle.text = product.name
         labelDesc.text = product.description
-        labelPrice.text = "- $\(String(format: "%.2f",product.price ?? 0))"
+        labelPrice.text = "- \(product.currency.uppercased())\(String(format: "%.2f",product.price ?? 0))"
         
         imageViewPayment.sd_setImage(with: URL(string: product.image_url))
         { (image, error, cache, url) in

@@ -31,8 +31,6 @@ class PaymentDetailsViewController: UIViewController {
     
     var manager: SettingsManager!
     
-    var totalInDollars: Double!
-    
     var coreDataHelper: CoreDataHelper!
     
     override func viewDidLoad() {
@@ -43,29 +41,15 @@ class PaymentDetailsViewController: UIViewController {
         display(p: product)
         
         buttonPay.addTapGestureRecognizer {
-            switch self.product.currency{
-                // change total price currency to dollar
-            case "aed":
-                self.totalInDollars = (self.product.tax + self.product.price) * 0.27
-                break
-            case "egp":
-                self.totalInDollars = (self.product.tax + self.product.price) * 0.063
-                break
-            default:
-                self.totalInDollars = self.product.tax + self.product.price
-                break
-            }
             
-            // cjeck you balance before paying
-            if self.totalInDollars > self.manager.getBalance(){
+            // check you balance before paying
+            if self.product.priceInDollar > self.manager.getBalance(){
                 
                 Toast.showAlert(viewController: self, text: NSLocalizedString("not_enough_balance", comment: ""))
                 return
             }else{
                 
                 self.coreDataHelper = CoreDataHelper.getInstance()
-                
-                self.product.price = self.totalInDollars
                 
                 self.coreDataHelper.createPaymet(product: self.product) { (status) in
                     if status{

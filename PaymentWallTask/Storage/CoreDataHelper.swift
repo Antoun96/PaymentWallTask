@@ -119,29 +119,30 @@ class CoreDataHelper {
     public func createPaymet(product: Product, action: ((_: Bool)-> Void)){
         
         let entity = NSEntityDescription.entity(forEntityName: "TRANSACTIONS", in: context)
-        let newUser = NSManagedObject(entity: entity!, insertInto: context)
+        let newPayment = NSManagedObject(entity: entity!, insertInto: context)
         
         let manager = SettingsManager()
         
-        newUser.setValue(product.name, forKey: "productName")
-        newUser.setValue(product.image_url, forKey: "productImage")
-        newUser.setValue(product.description, forKey: "productDescription")
-        newUser.setValue(manager.getId(), forKey: "userId")
+        newPayment.setValue(product.name, forKey: "productName")
+        newPayment.setValue(product.image_url, forKey: "productImage")
+        newPayment.setValue(product.description, forKey: "productDescription")
+        newPayment.setValue(manager.getId(), forKey: "userId")
+        newPayment.setValue(product.currency, forKey: "currency")
         
         let total = product.price + product.tax
-        newUser.setValue(total, forKey: "price")
+        newPayment.setValue(total, forKey: "price")
         
         let date = Date()
-        newUser.setValue(date, forKey: "date")
+        newPayment.setValue(date, forKey: "date")
         
         let id = getAutoIncremenet(name: "TRANSACTIONS")
-        newUser.setValue(id, forKey: "id")
+        newPayment.setValue(id, forKey: "id")
         
         do {
             try context.save()
             action(true)
             
-            changeBalance(id: manager.getId(), newBalance: manager.getBalance()-total)
+            changeBalance(id: manager.getId(), newBalance: manager.getBalance()-product.priceInDollar)
           
         } catch {
            print("Failed saving")

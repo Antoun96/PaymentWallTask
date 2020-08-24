@@ -17,6 +17,8 @@ class Product{
     
     var price: Double!
     
+    var priceInDollar: Double!
+    
     var tax: Double!
     
     var description: String!
@@ -43,6 +45,22 @@ class Product{
         
         currency = json["currency"] as? String ?? ""
         
+        switch self.currency{
+            // change total price currency to dollar
+        case "aed":
+            priceInDollar = (tax + price) * 0.27
+            break
+        case "egp":
+            priceInDollar = (tax + price) * 0.063
+            break
+        case "eur":
+            priceInDollar = (tax + price) * 1.18
+            break
+        default:
+            priceInDollar = tax + price
+            break
+        }
+        
     }
     
     func setValues(data: NSManagedObject){
@@ -51,6 +69,7 @@ class Product{
         self.name = data.value(forKey: "productName") as? String
         self.price = data.value(forKey: "price") as? Double
         self.description = data.value(forKey: "productDescription") as? String
+        self.currency = data.value(forKey: "currency") as? String
         
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MM-yyyy"
