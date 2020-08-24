@@ -18,12 +18,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7UV-Gn-8Qb">
-                        <rect key="frame" x="0.0" y="0.0" width="338" height="74"/>
+                        <rect key="frame" x="0.0" y="5" width="338" height="54"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_payment" translatesAutoresizingMaskIntoConstraints="NO" id="1CK-Ml-cWp" customClass="CircularImageView" customModule="PaymentWallTask" customModuleProvider="target">
                                 <rect key="frame" x="10" y="5" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1CK-Ml-cWp" secondAttribute="height" multiplier="1:1" id="50S-Nw-ZUq"/>
+                                    <constraint firstAttribute="height" constant="64" id="GE8-xb-zZr"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -34,51 +35,57 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="3EI-4i-DD8">
-                                <rect key="frame" x="84" y="5" width="42" height="64"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="3EI-4i-DD8">
+                                <rect key="frame" x="84" y="5" width="42" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vj-Hh-15M">
-                                        <rect key="frame" x="0.0" y="0.0" width="42" height="30.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.23921568630000001" green="0.28627450980000002" blue="0.33725490200000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oef-2W-jCs">
-                                        <rect key="frame" x="0.0" y="33.5" width="42" height="30.5"/>
+                                        <rect key="frame" x="0.0" y="23.5" width="42" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.23921568630000001" green="0.28627450980000002" blue="0.33725490200000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lz0-Gi-v7e">
-                                <rect key="frame" x="275" y="27" width="51" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ksf-hA-hP5">
+                                <rect key="frame" x="276.5" y="18" width="37.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.23921568630000001" green="0.28627450980000002" blue="0.33725490200000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lz0-Gi-v7e">
+                                <rect key="frame" x="318" y="17" width="8" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <inset key="imageEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="$3.50" image="ic_forward_arrow">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="ic_forward_arrow">
+                                    <color key="titleColor" red="0.23921568630000001" green="0.28627450980000002" blue="0.33725490200000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="3EI-4i-DD8" firstAttribute="centerY" secondItem="7UV-Gn-8Qb" secondAttribute="centerY" id="0pc-Tp-ldC"/>
-                            <constraint firstItem="1CK-Ml-cWp" firstAttribute="top" secondItem="3EI-4i-DD8" secondAttribute="top" id="2YA-2v-nSV"/>
+                            <constraint firstItem="lz0-Gi-v7e" firstAttribute="leading" secondItem="Ksf-hA-hP5" secondAttribute="trailing" constant="4" id="4Ie-ad-aa1"/>
+                            <constraint firstItem="1CK-Ml-cWp" firstAttribute="top" secondItem="7UV-Gn-8Qb" secondAttribute="top" constant="5" id="Byv-qM-xua"/>
                             <constraint firstItem="lz0-Gi-v7e" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7UV-Gn-8Qb" secondAttribute="top" id="FNd-iW-MjN"/>
                             <constraint firstItem="3EI-4i-DD8" firstAttribute="leading" secondItem="1CK-Ml-cWp" secondAttribute="trailing" constant="10" id="UYA-sN-BrE"/>
                             <constraint firstItem="lz0-Gi-v7e" firstAttribute="centerY" secondItem="7UV-Gn-8Qb" secondAttribute="centerY" id="f2D-v2-yTb"/>
-                            <constraint firstItem="lz0-Gi-v7e" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3EI-4i-DD8" secondAttribute="trailing" constant="10" id="f2X-gn-sqL"/>
+                            <constraint firstItem="1CK-Ml-cWp" firstAttribute="centerY" secondItem="7UV-Gn-8Qb" secondAttribute="centerY" id="fho-2y-72t"/>
                             <constraint firstAttribute="trailing" secondItem="lz0-Gi-v7e" secondAttribute="trailing" constant="12" id="qQb-Jx-UJW"/>
                             <constraint firstItem="1CK-Ml-cWp" firstAttribute="leading" secondItem="7UV-Gn-8Qb" secondAttribute="leading" constant="10" id="qsZ-mT-riW"/>
                             <constraint firstItem="3EI-4i-DD8" firstAttribute="top" secondItem="7UV-Gn-8Qb" secondAttribute="top" constant="5" id="rwt-eJ-TCA"/>
-                            <constraint firstItem="1CK-Ml-cWp" firstAttribute="bottom" secondItem="3EI-4i-DD8" secondAttribute="bottom" id="z5K-Bp-3U3"/>
+                            <constraint firstItem="Ksf-hA-hP5" firstAttribute="centerY" secondItem="3EI-4i-DD8" secondAttribute="centerY" id="vbE-i4-JAX"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="7UV-Gn-8Qb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="0Fl-OL-aBx"/>
+                    <constraint firstItem="7UV-Gn-8Qb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="0Fl-OL-aBx"/>
                     <constraint firstAttribute="trailing" secondItem="7UV-Gn-8Qb" secondAttribute="trailing" id="6nk-s8-Xvo"/>
-                    <constraint firstAttribute="bottom" secondItem="7UV-Gn-8Qb" secondAttribute="bottom" id="Mef-aM-GJy"/>
+                    <constraint firstAttribute="bottom" secondItem="7UV-Gn-8Qb" secondAttribute="bottom" constant="5" id="Mef-aM-GJy"/>
                     <constraint firstItem="7UV-Gn-8Qb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="npz-J3-F7S"/>
                 </constraints>
             </tableViewCellContentView>
@@ -87,6 +94,7 @@
                 <outlet property="buttonPrice" destination="lz0-Gi-v7e" id="Jln-yn-63n"/>
                 <outlet property="imageViewPayment" destination="1CK-Ml-cWp" id="cnD-eY-EJP"/>
                 <outlet property="labelDesc" destination="oef-2W-jCs" id="hiA-iQ-ibu"/>
+                <outlet property="labelPrice" destination="Ksf-hA-hP5" id="2km-hU-5eA"/>
                 <outlet property="labelTitle" destination="7vj-Hh-15M" id="yjU-Hn-0qK"/>
             </connections>
             <point key="canvasLocation" x="150.72463768115944" y="96.428571428571431"/>

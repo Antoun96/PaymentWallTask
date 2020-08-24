@@ -23,7 +23,7 @@ class Product{
     
     var currency: String!
     
-    var date: Date!
+    var date: String!
     
     init() {
         
@@ -31,17 +31,17 @@ class Product{
     
     init(json: [String:Any]) {
         
-        image_url = json["image_url"] as! String
+        image_url = json["image_url"] as? String ?? ""
         
-        name = json["product"] as! String
+        name = json["product"] as? String ?? ""
         
-        price = json["price"] as! Double
+        price = json["price"] as? Double ?? 0
         
-        tax = json["tax"] as! Double
+        tax = json["tax"] as? Double ?? 0
         
-        description = json["product_description"] as! String
+        description = json["product_description"] as? String ?? ""
         
-        currency = json["currency"] as! String
+        currency = json["currency"] as? String ?? ""
         
     }
     
@@ -51,7 +51,11 @@ class Product{
         self.name = data.value(forKey: "productName") as? String
         self.price = data.value(forKey: "price") as? Double
         self.description = data.value(forKey: "productDescription") as? String
-        self.date = data.value(forKey: "date") as? Date
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy"
+        
+        self.date = formatter.string(from: data.value(forKey: "date") as! Date)
         
     }
 }

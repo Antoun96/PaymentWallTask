@@ -21,6 +21,7 @@
 		B1A2E9FF24F30D6600FA9BD3 /* TransactionSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2E9FE24F30D6600FA9BD3 /* TransactionSuccessViewController.swift */; };
 		B1A2EA0324F3205700FA9BD3 /* PaymentHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2EA0124F3205700FA9BD3 /* PaymentHistoryTableViewCell.swift */; };
 		B1A2EA0424F3205700FA9BD3 /* PaymentHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1A2EA0224F3205700FA9BD3 /* PaymentHistoryTableViewCell.xib */; };
+		B1A2EA0A24F3366300FA9BD3 /* PaymentSectionTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2EA0924F3366300FA9BD3 /* PaymentSectionTableViewHeaderFooterView.swift */; };
 		B1A9CE7B24F17CF500B61776 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE7A24F17CF500B61776 /* SettingsManager.swift */; };
 		B1A9CE7D24F1825500B61776 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE7C24F1825500B61776 /* LoadingView.swift */; };
 		B1A9CE8024F18FAC00B61776 /* PaymentWall.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1A9CE7E24F18FAC00B61776 /* PaymentWall.xcdatamodeld */; };
@@ -64,6 +65,7 @@
 		B1A2E9FE24F30D6600FA9BD3 /* TransactionSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSuccessViewController.swift; sourceTree = "<group>"; };
 		B1A2EA0124F3205700FA9BD3 /* PaymentHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		B1A2EA0224F3205700FA9BD3 /* PaymentHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		B1A2EA0924F3366300FA9BD3 /* PaymentSectionTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSectionTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		B1A9CE7A24F17CF500B61776 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		B1A9CE7C24F1825500B61776 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		B1A9CE7F24F18FAC00B61776 /* PaymentWall.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PaymentWall.xcdatamodel; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			children = (
 				B1A2EA0124F3205700FA9BD3 /* PaymentHistoryTableViewCell.swift */,
 				B1A2EA0224F3205700FA9BD3 /* PaymentHistoryTableViewCell.xib */,
+				B1A2EA0924F3366300FA9BD3 /* PaymentSectionTableViewHeaderFooterView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				B184FA2A24EF3FBA0030C510 /* MainViewController.swift in Sources */,
 				B1A9CE9324F19E0E00B61776 /* CoreDataHelper.swift in Sources */,
 				B1A9CE9124F198B900B61776 /* USERS+CoreDataClass.swift in Sources */,
+				B1A2EA0A24F3366300FA9BD3 /* PaymentSectionTableViewHeaderFooterView.swift in Sources */,
 				B1A9CE9024F198B900B61776 /* USERS+CoreDataProperties.swift in Sources */,
 				B1AC7A7E24F03BC0002788CE /* SignUpViewController.swift in Sources */,
 				B184FA3D24EF56820030C510 /* RoundedEdgeView.swift in Sources */,

@@ -174,6 +174,10 @@ class CoreDataHelper {
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "TRANSACTIONS")
         request.predicate = NSPredicate(format: "userId = \(id)")
+        
+        let sectionSortDescriptor = NSSortDescriptor(key: "date", ascending: false)
+        request.sortDescriptors = [sectionSortDescriptor]
+        
         request.returnsObjectsAsFaults = false
         
         var productsArray = [Product]()

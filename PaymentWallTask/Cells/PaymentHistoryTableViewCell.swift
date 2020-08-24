@@ -7,9 +7,9 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PaymentHistoryTableViewCell: UITableViewCell {
-
     
     @IBOutlet weak var imageViewPayment: UIImageView!
     
@@ -18,6 +18,8 @@ class PaymentHistoryTableViewCell: UITableViewCell {
     @IBOutlet weak var labelDesc: UILabel!
     
     @IBOutlet weak var buttonPrice: UIButton!
+    
+    @IBOutlet weak var labelPrice: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,7 +33,19 @@ class PaymentHistoryTableViewCell: UITableViewCell {
     }
     
     func setDetails(product: Product){
+       
+        labelTitle.text = product.name
+        labelDesc.text = product.description
+        labelPrice.text = "- $\(String(format: "%.2f",product.price ?? 0))"
         
+        imageViewPayment.sd_setImage(with: URL(string: product.image_url))
+        { (image, error, cache, url) in
+            
+            if let _ = error {
+                // default_profile_photo
+                self.imageViewPayment.image = UIImage(named: "default")
+            }
+        }
     }
     
 }
