@@ -171,7 +171,7 @@ class CoreDataHelper {
         }
     }
     
-    public func getPaymentHistory(id: Int, products:((_: [Product]?)-> Void)?){
+    public func getPaymentHistory(id: Int, products:((_: [Product])-> Void)){
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "TRANSACTIONS")
         request.predicate = NSPredicate(format: "userId = \(id)")
@@ -179,9 +179,11 @@ class CoreDataHelper {
         let sectionSortDescriptor = NSSortDescriptor(key: "date", ascending: false)
         request.sortDescriptors = [sectionSortDescriptor]
         
+        request.fetchLimit = 10
         request.returnsObjectsAsFaults = false
         
         var productsArray = [Product]()
+        
         do {
             let result = try context.fetch(request)
             
@@ -193,16 +195,12 @@ class CoreDataHelper {
                 
             }
             
-            if productsArray.count > 0{
-                products!(productsArray)
-            }else {
-                products!(nil)
-            }
+            products(productsArray)
             
         } catch {
             
             print("Failed")
-            products!(nil)
+            products(productsArray)
         }
     }
     

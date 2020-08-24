@@ -57,18 +57,14 @@ class WalletViewController: UIViewController, UITableViewDataSource, UITableView
             
             self.loadingView.setIsLoading(false)
             
-            if products == nil{
-                
-                self.tableViewPaymentHistory.isHidden = true
-                
-            }else if products?.count == 0{
+            if products.count == 0{
                 self.tableViewPaymentHistory.isHidden = true
             }else {
                 
                 self.tableViewPaymentHistory.isHidden = false
                 self.labelNoRecords.isHidden = true
                 
-                self.products = products!
+                self.products = products
                 
                 for p in self.products{
                     
