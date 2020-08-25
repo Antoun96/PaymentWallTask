@@ -44,11 +44,11 @@ class QRScannerViewController: UIViewController, QRScannerViewDelegate {
             
             let d = json["data"] as! [String: Any]
             
-            let product = Product(json: d)
+            let transaction = Transaction(json: d)
             
             let vc = storyboard?.instantiateViewController(withIdentifier: "PaymentDetailsViewController") as! PaymentDetailsViewController
             
-            vc.product = product
+            vc.transaction = transaction
             
             self.show(vc, sender: self)
             

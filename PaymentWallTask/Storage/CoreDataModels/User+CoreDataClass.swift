@@ -22,40 +22,35 @@ public class User: NSManagedObject {
     
     public func register(action: ((_: User?)-> Void)?){
         
-        let newUser = User.init(entity: self.entity, insertInto: CoreDataHelper.getInstance().context)
-        newUser.balance = self.balance
-        newUser.password = self.password
-        newUser.firstName = self.firstName
-        newUser.lastName = self.lastName
-        newUser.email = self.email
-        
-        let id = CoreDataHelper.getInstance().getAutoIncremenet(name: "User")
-        
-        newUser.id = Int32(id)
-        
-        do {
-            try CoreDataHelper.getInstance().context.save()
-            if action != nil{
-                action!(newUser)
-            }
-        } catch {
-            print("Failed saving")
-            if action != nil{
-                action!(nil)
+        CoreDataHelper.getInstance().getAutoIncremenet(name: "User") { (id) in
+            
+            self.id = Int32(id)
+            
+            do {
+                try CoreDataHelper.getInstance().context.save()
+                if action != nil{
+                    action!(self)
+                }
+            } catch {
+                print("Failed saving")
+                if action != nil{
+                    action!(nil)
+                }
             }
         }
+    
     }
     
     public func signIn(email: String, password: String, usr:((_: User?)-> Void)){
         
         let request: NSFetchRequest<User> = User.fetchRequest()
         request.predicate = NSPredicate(format: "email = %@", email)
-        request.predicate = NSPredicate(format: "password = %@", password)
         request.returnsObjectsAsFaults = false
         do {
             let result = try CoreDataHelper.getInstance().context.fetch(request)
             
-            if let user = result.first{
+            if let user = result.first, user.password == password{
+                
                 usr(user)
             }else{
                 usr(nil)
@@ -64,6 +59,26 @@ public class User: NSManagedObject {
             
             print("Failed")
             usr(nil)
+        }
+    }
+    
+    public func changeBalance(newBalance: Double){
+        
+        let request: NSFetchRequest<User> = User.fetchRequest()
+        request.predicate = NSPredicate(format: "id = \(SettingsManager().getId())")
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try CoreDataHelper.getInstance().context.fetch(request)
+            
+            if let r = result.first{
+                
+                r.balance = newBalance
+                SettingsManager().setBalance(value: newBalance)
+                try CoreDataHelper.getInstance().context.save()
+            }
+        } catch {
+            
+            print("Failed")
         }
     }
 }

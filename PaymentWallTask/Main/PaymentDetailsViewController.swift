@@ -27,7 +27,7 @@ class PaymentDetailsViewController: UIViewController {
     
     @IBOutlet weak var buttonPay: UIButton!
     
-    var product: Product!
+    var transaction: Transaction!
     
     var manager: SettingsManager!
     
@@ -38,12 +38,12 @@ class PaymentDetailsViewController: UIViewController {
 
         manager = SettingsManager()
         
-        display(p: product)
+        display(p: transaction)
         
         buttonPay.addTapGestureRecognizer {
             
             // check you balance before paying
-            if self.product.priceInDollar > self.manager.getBalance(){
+            if self.transaction.priceInDollar > self.manager.getBalance(){
                 
                 Toast.showAlert(viewController: self, text: NSLocalizedString("not_enough_balance", comment: ""))
                 return
@@ -51,7 +51,7 @@ class PaymentDetailsViewController: UIViewController {
                 
                 self.coreDataHelper = CoreDataHelper.getInstance()
                 
-                self.coreDataHelper.createPaymet(product: self.product) { (status) in
+                self.transaction.createPayment { (status) in
                     if status{
                         
                         let vc = TransactionSuccessViewController.getInstance {
@@ -70,23 +70,30 @@ class PaymentDetailsViewController: UIViewController {
         }
     }
     
-    func display(p: Product){
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        labelName.text = p.name
-        var currency = p.currency.uppercased()
-        if currency.contains("DOLLAR"){
-            currency = "$"
-        }
+        let title = UILabel()
+        title.textColor = .white
+        title.text = "Payment"
+        self.navigationItem.titleView = title
+    }
+    
+    func display(p: Transaction){
+        
+        labelName.text = p.productName
+        let currency = p.currency!.uppercased()
+        
         labelBalance.text = "\(currency) \(String(format: "%.2f", SettingsManager().getBalance()))"
         labelTax.text = "\(currency) \(String(format: "%.2f", p.tax))"
-        labelsubTotal.text = "\(currency) \(String(format: "%.2f", p.price))"
-        let total = p.tax + p.price
+        labelsubTotal.text = "\(currency) \(String(format: "%.2f", p.subPrice))"
+        let total = p.tax + p.subPrice
         labelTotalPrice.text = "\(currency) \(String(format: "%.2f", total))"
-        labelDescription.text = "\(p.description ?? "")"
+        labelDescription.text = "\(p.productDescription ?? "")"
         
         buttonPay.setTitle("Pay \(currency) \(String(format: "%.2f", total))", for: .normal)
         
-        imageViewProductImage.sd_setImage(with: URL(string: p.image_url))
+        imageViewProductImage.sd_setImage(with: URL(string: p.productImage!))
         { (image, error, cache, url) in
             
             if let _ = error {

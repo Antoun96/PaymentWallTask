@@ -17,9 +17,9 @@ extension Transaction {
     }
 
     @NSManaged public var currency: String?
-    @NSManaged public var date: TimeInterval
+    @NSManaged public var date: Date
     @NSManaged public var id: Int32
-    @NSManaged public var price: Int32
+    @NSManaged public var price: Double
     @NSManaged public var productDescription: String?
     @NSManaged public var productImage: String?
     @NSManaged public var productName: String?

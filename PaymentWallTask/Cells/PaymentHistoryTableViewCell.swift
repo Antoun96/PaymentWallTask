@@ -32,13 +32,13 @@ class PaymentHistoryTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setDetails(product: Product){
+    func setDetails(transaction: Transaction){
        
-        labelTitle.text = product.name
-        labelDesc.text = product.description
-        labelPrice.text = "- \(product.currency.uppercased())\(String(format: "%.2f",product.price ?? 0))"
+        labelTitle.text = transaction.productName
+        labelDesc.text = transaction.productDescription
+        labelPrice.text = "- \(transaction.currency!.uppercased())\(String(format: "%.2f",transaction.price ?? 0))"
         
-        imageViewPayment.sd_setImage(with: URL(string: product.image_url))
+        imageViewPayment.sd_setImage(with: URL(string: transaction.productImage!))
         { (image, error, cache, url) in
             
             if let _ = error {

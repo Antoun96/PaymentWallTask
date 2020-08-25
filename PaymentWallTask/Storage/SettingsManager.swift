@@ -31,7 +31,7 @@ class SettingsManager {
         
         if let user = user {
 
-            if user.id > 0{
+            if user.id > -1{
                 setIsloggedIn(value: true)
                 setId(value: Int(user.id))
                 setFirstName(value: user.firstName!)

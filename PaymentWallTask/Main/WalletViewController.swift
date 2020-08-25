@@ -20,7 +20,7 @@ class WalletViewController: UIViewController, UITableViewDataSource, UITableView
     
     var coreDataHelper: CoreDataHelper!
     
-    var products = [Product]()
+    var transactions = [Transaction]()
     
     var sectionDates = [String]()
     var sectionSize = [Int]()
@@ -42,6 +42,7 @@ class WalletViewController: UIViewController, UITableViewDataSource, UITableView
         
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableViewPaymentHistory.addSubview(refreshControl)
         
     }
     
@@ -63,32 +64,45 @@ class WalletViewController: UIViewController, UITableViewDataSource, UITableView
     
     func getHistory() {
         
-        coreDataHelper.getPaymentHistory(id: SettingsManager().getId()) { (products) in
+        Transaction().getPaymentHistory(id: SettingsManager().getId()) { (transactions) in
             
-            if products.count == 0{
-                self.tableViewPaymentHistory.isHidden = true
-            }else {
+            if let transactions = transactions{
                 
-                self.tableViewPaymentHistory.isHidden = false
-                self.labelNoRecords.isHidden = true
+                if transactions.count == 0{
+                    self.tableViewPaymentHistory.isHidden = true
+                }else {
                 
-                // products are already sorted so we need to get the dates and count of items for each day for the table view section title and size
-                
-                self.products = products
-                for p in products{
+                    self.tableViewPaymentHistory.isHidden = false
+                    self.labelNoRecords.isHidden = true
                     
-                    if !sectionDates.contains(p.date){
-                        sectionDates.append(p.date)
-                        sectionSize.append(1)
-                    }else {
-                        sectionSize[sectionDates.firstIndex(of: p.date)!] += 1
+                    // products are already sorted so we need to get the dates and count of items for each day for the table view section title and size
+                    
+                    self.transactions = transactions
+                    
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "dd-MM-yyyy"
+                    
+                    self.sectionDates = [String]()
+                    self.sectionSize = [Int]()
+                    
+                    for p in transactions{
+                        
+                        if !self.sectionDates.contains(formatter.string(from:p.date)){
+                            self.sectionDates.append(formatter.string(from:p.date))
+                            self.sectionSize.append(1)
+                        }else {
+                            
+                            self.sectionSize[self.sectionDates.firstIndex(of: formatter.string(from:p.date))!] += 1
+                        }
+                       
                     }
-                   
+                    
+                    self.tableViewPaymentHistory.reloadData()
+                    self.constraintTableHeight.constant = self.tableViewPaymentHistory.contentSize.height
+                    self.tableViewPaymentHistory.setNeedsUpdateConstraints()
                 }
-                
-                self.tableViewPaymentHistory.reloadData()
-                self.constraintTableHeight.constant = self.tableViewPaymentHistory.contentSize.height
-                self.tableViewPaymentHistory.setNeedsUpdateConstraints()
+            }else {
+                self.tableViewPaymentHistory.isHidden = true
             }
         }
     }
@@ -102,7 +116,7 @@ class WalletViewController: UIViewController, UITableViewDataSource, UITableView
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PaymentHistoryTableViewCell
         
-        cell.setDetails(product: products[indexPath.row])
+        cell.setDetails(transaction: transactions[indexPath.row])
         
         return cell
     }

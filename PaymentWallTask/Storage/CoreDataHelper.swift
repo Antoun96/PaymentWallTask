@@ -44,95 +44,6 @@ class CoreDataHelper {
         context = persistentContainer.viewContext
     }
     
-    
-    public func createPaymet(product: Product, action: ((_: Bool)-> Void)){
-        
-        let entity = NSEntityDescription.entity(forEntityName: "TRANSACTIONS", in: context)
-        let newPayment = NSManagedObject(entity: entity!, insertInto: context)
-        
-        let manager = SettingsManager()
-        
-        newPayment.setValue(product.name, forKey: "productName")
-        newPayment.setValue(product.image_url, forKey: "productImage")
-        newPayment.setValue(product.description, forKey: "productDescription")
-        newPayment.setValue(manager.getId(), forKey: "userId")
-        newPayment.setValue(product.currency, forKey: "currency")
-        
-        let total = product.price + product.tax
-        newPayment.setValue(total, forKey: "price")
-        
-        let date = Date()
-        newPayment.setValue(date, forKey: "date")
-        
-        let id = getAutoIncremenet(name: "TRANSACTIONS")
-        newPayment.setValue(id, forKey: "id")
-        
-        do {
-            try context.save()
-            action(true)
-            
-            changeBalance(id: manager.getId(), newBalance: manager.getBalance()-product.priceInDollar)
-          
-        } catch {
-           print("Failed saving")
-            
-            action(false)
-        }
-    }
-    
-    private func changeBalance(id: Int, newBalance: Double){
-        
-        let request: NSFetchRequest<User> = User.fetchRequest()
-        request.predicate = NSPredicate(format: "id = \(id)")
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try context.fetch(request)
-            
-            if result.count > 0{
-                
-                (result as! [NSManagedObject])[0].setValue(newBalance, forKey: "balance")
-                SettingsManager().setBalance(value: newBalance)
-                try context.save()
-            }
-        } catch {
-            
-            print("Failed")
-        }
-    }
-    
-    public func getPaymentHistory(id: Int, products:((_: [Product])-> Void)){
-        
-        let request: NSFetchRequest<Transaction> = Transaction.fetchRequest()
-        request.predicate = NSPredicate(format: "userId = \(id)")
-        
-        let sectionSortDescriptor = NSSortDescriptor(key: "date", ascending: false)
-        request.sortDescriptors = [sectionSortDescriptor]
-        
-        request.fetchLimit = 10
-        request.returnsObjectsAsFaults = false
-        
-        var productsArray = [Product]()
-        
-        do {
-            let result = try context.fetch(request)
-            
-            for data in result as! [NSManagedObject]{
-                
-                let product = Product()
-                product.setValues(data: data)
-                productsArray.append(product)
-                
-            }
-            
-            products(productsArray)
-            
-        } catch {
-            
-            print("Failed")
-            products(productsArray)
-        }
-    }
-    
     func registerBasicAccounts(){
         
         let request: NSFetchRequest<User> = User.fetchRequest()
@@ -142,7 +53,7 @@ class CoreDataHelper {
             let result = try context.fetch(request)
             if result.count == 0{
                
-                let user1 = User()
+                let user1 = User.init(entity: User().entity, insertInto: context)
                 user1.email = "a@mail.com"
                 user1.firstName = "Antoun"
                 user1.lastName = "William"
@@ -150,7 +61,7 @@ class CoreDataHelper {
                 user1.balance = 600
                 user1.register(action: nil)
                 
-                let user2 = User()
+                let user2 = User.init(entity: User().entity, insertInto: context)
                 user2.email = "antoun@mail.com"
                 user2.firstName = "Antoun"
                 user2.lastName = "William"
@@ -158,7 +69,7 @@ class CoreDataHelper {
                 user2.balance = 600
                 user2.register(action: nil)
                 
-                let user3 = User()
+                let user3 = User.init(entity: User().entity, insertInto: context)
                 user3.email = "ab@mail.com"
                 user3.firstName = "Antoun"
                 user3.lastName = "William"
@@ -175,7 +86,7 @@ class CoreDataHelper {
         }
     }
     
-    public func getAutoIncremenet(name: String) -> Int   {
+    public func getAutoIncremenet(name: String, action: (_: Int)-> Void)  {
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: name)
 
@@ -195,11 +106,11 @@ class CoreDataHelper {
             }else {
                 newId = 1
             }
-            return newId
+            action(newId)
         } catch {
             let fetchError = error as NSError
             print(fetchError)
-            return -1
+            action(-1)
         }
     }
 }

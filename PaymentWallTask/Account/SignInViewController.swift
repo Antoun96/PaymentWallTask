@@ -59,7 +59,7 @@ class SignInViewController: UIViewController {
                     window.makeKeyAndVisible()
                 }else {
                     
-                    Toast.showAlert(viewController: self, text: "wrong_credintials")
+                    Toast.showAlert(viewController: self, text: NSLocalizedString("wrong_credintials", comment: ""))
                 }
             }
         }

@@ -23,7 +23,7 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var labelTerms: UILabel!
     
-    var user = User()
+    var user = User.init(entity: User().entity, insertInto: CoreDataHelper.getInstance().context)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,7 +87,7 @@ class SignUpViewController: UIViewController {
        
         if validateSignUp(){
             
-            user.register() { (usr) in
+            user.register { (usr) in
            
                 if usr != nil{
                     
